@@ -1,0 +1,144 @@
+{
+  "version": "6.0",
+  "nxVersion": "21.6.4",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "8037249353422744134"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "17738933498318317962"
+      },
+      {
+        "file": ".postcssrc.json",
+        "hash": "17460548602263189673"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "11500506119373548997"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "11934160580685414355"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "17406702432687230417"
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "hash": "10093397977228577162"
+      },
+      {
+        "file": "README.md",
+        "hash": "9711872772560287864"
+      },
+      {
+        "file": "angular.json",
+        "hash": "15719878421098807567"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "8143844633028652614"
+      },
+      {
+        "file": "package.json",
+        "hash": "16843381705607414491"
+      },
+      {
+        "file": "public/favicon.ico",
+        "hash": "3988961587069885523"
+      },
+      {
+        "file": "src/app/app.config.ts",
+        "hash": "2830766725274472427"
+      },
+      {
+        "file": "src/app/app.css",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/app.html",
+        "hash": "7626786469124510052"
+      },
+      {
+        "file": "src/app/app.routes.ts",
+        "hash": "2028508847732015195"
+      },
+      {
+        "file": "src/app/app.spec.ts",
+        "hash": "2948701941421451582"
+      },
+      {
+        "file": "src/app/app.ts",
+        "hash": "8941224910394564879"
+      },
+      {
+        "file": "src/app/layouts/main-layout/main-layout.css",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/layouts/main-layout/main-layout.html",
+        "hash": "6730142403132888712"
+      },
+      {
+        "file": "src/app/layouts/main-layout/main-layout.spec.ts",
+        "hash": "14518654196068072373"
+      },
+      {
+        "file": "src/app/layouts/main-layout/main-layout.ts",
+        "hash": "5315105181123269556"
+      },
+      {
+        "file": "src/app/pages/home-page/home-page.css",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/pages/home-page/home-page.html",
+        "hash": "6821866553055953281"
+      },
+      {
+        "file": "src/app/pages/home-page/home-page.spec.ts",
+        "hash": "3455970397787140178"
+      },
+      {
+        "file": "src/app/pages/home-page/home-page.ts",
+        "hash": "11618694404077510398"
+      },
+      {
+        "file": "src/app/shared/types/client.ts",
+        "hash": "3942473615207783867"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "10605801415505151786"
+      },
+      {
+        "file": "src/main.ts",
+        "hash": "10405740721546735325"
+      },
+      {
+        "file": "src/styles.css",
+        "hash": "8632657143177001524"
+      },
+      {
+        "file": "tsconfig.app.json",
+        "hash": "10136459155298117738"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "17213104504590097198"
+      },
+      {
+        "file": "tsconfig.spec.json",
+        "hash": "15504553596141903120"
+      }
+    ]
+  },
+  "externalNodesHash": "17769165181203219598"
+}

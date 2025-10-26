@@ -1,0 +1,22 @@
+<div class="bg-white w-full p-8 rounded-lg sm:w-[400px] sm:border border-input">
+  <div class="flex justify-center mb-4">
+    <img alt="restaurant logo" class="h-8" src="assets/icons/restaurant-logo.png">
+  </div>
+  <div class="flex flex-col gap-2 mb-6 ">
+    <h1 class="text-xl sm:text-2xl text-secondary-foreground font-bold">Bienvenue à Shake shack</h1>
+    <p
+      class="text-slate-600 text-sm">{{ step === 'email' ? 'Entrez votre adresse email pour vous connecter.' : 'Entrez le code reçu par mail.' }} </p>
+  </div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" novalidate>
+    <app-login-form [form]="form" [step]="step"></app-login-form>
+
+    <button [disabled]="isPending" class="mt-4 w-full" hlmBtn type="submit">
+      {{ step === 'email' ? 'Envoyer le code' : 'Valider le code' }}
+    </button>
+    @if (step === 'otp') {
+      <button (click)="previousStep()" class="mt-2 w-full" hlmBtn type="button" variant="link">Retour</button>
+    }
+
+  </form>
+</div>
+
