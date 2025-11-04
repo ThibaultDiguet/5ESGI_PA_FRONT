@@ -8,9 +8,7 @@ import {Navbar} from '../../shared/components/site/navbar/navbar';
     RouterOutlet,
     Navbar
   ],
-  templateUrl: './main-layout.html',
-  styleUrl: './main-layout.css'
+  templateUrl: './terminal-layout.html',
 })
 export class MainLayoutComponent {
-
 }

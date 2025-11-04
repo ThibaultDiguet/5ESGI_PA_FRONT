@@ -12,4 +12,10 @@ import {LoginWrapper} from '../../features/site-auth/login-wrapper/login-wrapper
 })
 export class HomePage {
 
+  constructor() {
+  }
+
+  ngOnInit(): void {
+    // document.documentElement.style.setProperty('--primary', 'red')
+  }
 }
