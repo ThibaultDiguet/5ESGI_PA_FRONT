@@ -1,4 +1,4 @@
-import {Component, Input, Optional, Self} from '@angular/core';
+import {Component, EventEmitter, Input, Optional, Output, Self} from '@angular/core';
 import {ControlValueAccessor, FormsModule, NgControl} from '@angular/forms';
 import {HlmFormFieldImports} from '../../ui/ui-form-field-helm/src';
 import {HlmInputImports} from '../../ui/ui-input-helm/src';
@@ -18,6 +18,7 @@ import {HlmLabelImports} from '../../ui/ui-label-helm/src';
 export class InputControlComponent implements ControlValueAccessor {
   @Input({required: true}) label!: string;
   @Input() type = 'text';
+  @Output() inputChange = new EventEmitter<string>();
 
   value: any = '';
 
@@ -70,6 +71,7 @@ export class InputControlComponent implements ControlValueAccessor {
     const val = event.target.value;
     this.value = val;
     this.onChange(val);
+    this.inputChange.emit(val);
   }
 
   onBlur() {

@@ -2,7 +2,7 @@ import {Routes} from '@angular/router';
 import {HomePage} from './pages/home-page/home-page';
 import {AdministratorLayout} from './layouts/administrator-layout/administrator-layout';
 import {SiteLayout} from './layouts/site-layout/site-layout';
-import {RegisterTerminal} from './pages/register-terminal/register-terminal';
+import {InitTerminal} from './pages/terminal/init-terminal/init-terminal';
 
 export const routes: Routes = [
   {
@@ -10,7 +10,7 @@ export const routes: Routes = [
   },
   {
     path: 'terminal', component: SiteLayout, children: [
-      {'path': 'register', component: RegisterTerminal,},
+      {'path': 'init', component: InitTerminal,},
     ],
   },
   {

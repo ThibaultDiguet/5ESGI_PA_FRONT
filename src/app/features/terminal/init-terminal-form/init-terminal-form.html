@@ -9,10 +9,13 @@
   </div>
 
   <form (ngSubmit)="onSubmit()" [formGroup]="form" novalidate>
-    <app-input formControlName="uuid" label="Identifiant de la borne"/>
+    <app-input (inputChange)="onUuidInput()" formControlName="uuid" label="Identifiant de la borne"/>
+    @if (uuidNotFound) {
+      <hlm-error>UUID introuvable</hlm-error>
+    }
     <button class="mt-4 w-full" hlmBtn type="submit">
       <ng-icon hlm name="lucideChevronRight"/>
-      Enregistrer la borne
+      Enregistrer la bornea
     </button>
   </form>
 </div>
