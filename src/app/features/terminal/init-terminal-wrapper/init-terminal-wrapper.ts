@@ -1,9 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {TerminalConfig} from '../../../core/types/terminal';
 import {TerminalService} from '../../../core/services/terminal';
 import {InitTerminalForm} from '../init-terminal-form/init-terminal-form';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HlmButton} from '../../../shared/components/ui/ui-button-helm/src';
+import {StyleService} from '../../../core/services/style';
+import {LocalStorageService} from '../../../core/services/localStorage';
 
 @Component({
   selector: 'app-terminal-wrapper',
@@ -19,18 +21,37 @@ import {HlmButton} from '../../../shared/components/ui/ui-button-helm/src';
 export class InitTerminalWrapper {
   config: TerminalConfig | null = null;
   uuidNotFound = false;
+  configLoadedFromCache = false;
 
-  constructor(private terminalService: TerminalService) {
+  terminalService : TerminalService = inject(TerminalService);
+  styleService : StyleService = inject(StyleService);
+  localStorageService : LocalStorageService = inject(LocalStorageService);
+
+  ngOnInit(): void {
+    const cachedConfig = this.localStorageService.getItem('terminal-config');
+
+    if (cachedConfig && typeof cachedConfig === "object") {
+      try {
+        this.config = cachedConfig as TerminalConfig;
+        this.configLoadedFromCache = true;
+        this.styleService.applyStyles(this.config!.styles);
+
+      } catch {
+        this.localStorageService.removeItem('terminal-config');
+        this.localStorageService.removeItem('terminal-uuid');
+      }
+    }
+
   }
 
   onUuidSubmitted(uuid: string) {
     this.terminalService.registerTerminal(uuid).subscribe({
-      next: (data) => {
-        this.config = data as TerminalConfig;
+      next: (data ) => {
+        const config : TerminalConfig = data as TerminalConfig
+        this.config = config;
         this.uuidNotFound = false;
 
-        //Simulation du service qui s'occupe d'appliquer le style récupéré de la config
-        document.documentElement.style.setProperty('--primary', 'oklch(0.553 0.158 136.559)')
+        this.styleService.applyStyles(config.styles);
       },
       error: () => {
         this.uuidNotFound = true;
@@ -38,16 +59,29 @@ export class InitTerminalWrapper {
     });
   }
 
-  deleteConfig() {
+  deleteConfig(): void {
+    this.styleService.resetAll();
     this.config = null;
-
-    //Simulation du service qui s'occupe d'appliquer le style récupéré de la config
-    document.documentElement.style.setProperty('--primary', 'oklch(0.633 0.196 33.687)')
+    this.configLoadedFromCache = false;
+    this.localStorageService.removeItem('terminal-config');
+    this.localStorageService.removeItem('terminal-uuid');
   }
 
-  onConfigValidated() {
-    console.log('Config validée');
-    this.config = null;
-    //Enregistrer la config en cache. Cette config sera utilisée pour la borne.
+  onConfigValidated(): void {
+    if (!this.config) return;
+    this.localStorageService.setItem('terminal-uuid', this.config.terminal.uuid);
+    this.localStorageService.setItem('terminal-config', this.config);
+    this.configLoadedFromCache = true;
+  }
+
+  onSync(): void {
+    if (!this.config) return;
+    this.terminalService.registerTerminal(this.config.terminal.uuid).subscribe({
+      next: (freshConfig) => {
+        this.config = freshConfig as TerminalConfig;
+        this.styleService.applyStyles(this.config.styles);
+        this.localStorageService.setItem('terminal-config', JSON.stringify(this.config));
+      }
+    });
   }
 }
