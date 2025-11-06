@@ -1,19 +1,19 @@
-<div class="bg-white w-full p-8 rounded-lg sm:w-[400px] sm:border border-input">
-  <div class="flex justify-center mb-4">
+<div class="flex flex-col gap-4 bg-white w-full p-8 rounded-lg sm:w-[400px] sm:border border-input">
+  <div class="flex justify-center">
     <img alt="restaurant logo" class="h-16" src="assets/icons/logo-borne-appétit.png">
   </div>
-  <div class="flex flex-col gap-2 mb-6 ">
+  <div class="flex flex-col gap-2">
     <h1 class="text-xl sm:text-2xl text-secondary-foreground font-bold">Initialiser cette borne</h1>
     <p class="text-gray-600 text-sm">Pour initialiser cette borne, veuillez saisir son code unique, défini depuis la
       page d'administration.</p>
   </div>
 
-  <form (ngSubmit)="onSubmit()" [formGroup]="form" novalidate>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" novalidate class="flex flex-col gap-4">
     <app-input (inputChange)="onUuidInput()" formControlName="uuid" label="Identifiant de la borne"/>
     @if (uuidNotFound) {
       <hlm-error>UUID introuvable</hlm-error>
     }
-    <button class="mt-4 w-full" hlmBtn type="submit">
+    <button class="w-full" hlmBtn type="submit">
       <ng-icon hlm name="lucideChevronRight"/>
       Récupérer les informations
     </button>

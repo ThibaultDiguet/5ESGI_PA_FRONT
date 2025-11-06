@@ -9,6 +9,7 @@ export class LocalStorageService {
 
   constructor() {
     window.addEventListener('storage', (event) => {
+      console.log(event)
       if (event.key) {
         this.emitChange(event.key, event.newValue);
       } else {

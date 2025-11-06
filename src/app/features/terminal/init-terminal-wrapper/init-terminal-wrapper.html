@@ -4,44 +4,16 @@
     [uuidNotFound]="uuidNotFound"
   />
 } @else if (!configLoadedFromCache) {
-  <div class="bg-white w-full p-8 rounded-lg sm:w-[400px] sm:border border-input">
-    <div class="flex justify-center mb-4">
-      <img [src]="config.restaurant.logo" alt="restaurant logo" class="h-16" />
-    </div>
-    <div class="flex flex-col gap-2 mb-6">
-      <h1 class="text-xl sm:text-2xl text-secondary-foreground font-bold">
-        {{ config.terminal.name }} - {{ config.restaurant.name }}
-      </h1>
-      <p class="text-gray-600 text-sm">
-        Les informations ci-dessus ont été trouvées. Si elles sont correctes,
-        vous pouvez valider la configuration.
-      </p>
-    </div>
-    <button (click)="onConfigValidated()" class="mt-4 w-full" hlmBtn type="submit">
-      Valider
-    </button>
-    <button (click)="deleteConfig()" class="mt-2 w-full" hlmBtn type="button" variant="link">
-      Retour
-    </button>
-  </div>
+    <app-preview-terminal-config
+      [config]="config"
+      (cancelInit)="deleteConfig()"
+      (saveConfig)="saveConfig()"
+    />
 } @else {
-  <div class="bg-white w-full p-8 rounded-lg sm:w-[400px] sm:border border-input">
-    <div class="flex justify-center mb-4">
-      <img [src]="config.restaurant.logo" alt="restaurant logo" class="h-16" />
-    </div>
-    <div class="flex flex-col gap-2 mb-6">
-      <h1 class="text-xl sm:text-2xl text-secondary-foreground font-bold">
-        {{ config.terminal.name }} - {{ config.restaurant.name }}
-      </h1>
-      <p class="text-gray-600 text-sm">
-        Configuration chargée depuis le cache local.
-      </p>
-    </div>
-    <button (click)="onSync()" class="mt-4 w-full" hlmBtn type="button">
-      Synchroniser avec la base de données
-    </button>
-    <button (click)="deleteConfig()" class="mt-2 w-full" hlmBtn type="button" variant="link">
-      Supprimer la configuration
-    </button>
-  </div>
+  <app-config-already-exist
+    [config]="config"
+    (deleteConfig)="deleteConfig()"
+    (synchronizeConfig)="synchronizeConfig()"
+
+  />
 }

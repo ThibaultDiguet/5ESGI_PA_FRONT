@@ -32,7 +32,6 @@ export class InitTerminalForm {
     this.form = this.fb.group({
       uuid: ['', [Validators.required, Validators.maxLength(64)]],
     });
-
   }
 
   onUuidInput() {
