@@ -1,12 +1,12 @@
 import {Restaurant} from './restaurant';
 import {Style} from './style';
 
-export type Terminal = {
+export interface Terminal {
   name: string;
   uuid: string;
 }
 
-export type TerminalConfig = {
+export interface TerminalConfig {
   terminal: Terminal;
   restaurant: Restaurant;
   styles: Style[];

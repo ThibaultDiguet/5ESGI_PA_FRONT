@@ -1,6 +1,13 @@
-export type Restaurant = {
+import {Style} from './style';
+
+export interface Restaurant {
   name: string;
   uuid: string;
   uri_name: string;
   logo: string;
+}
+
+export interface RestaurantConfig {
+  restaurant: Restaurant;
+  styles: Style[];
 }

@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root',
 })
 
-export class TerminalService {
+export class RestaurantService {
   private apiUrl = environment.apiUrl;
   private http: HttpClient;
 
@@ -14,7 +14,8 @@ export class TerminalService {
   ) {
     this.http = inject(HttpClient);
   }
-  registerTerminal(uuid: string) {
-    return this.http.get(`${this.apiUrl}/terminal/config/${uuid}`);
+
+  getByUri(uri: string) {
+    return this.http.get(`${this.apiUrl}/restaurant/${uri}/config`);
   }
 }

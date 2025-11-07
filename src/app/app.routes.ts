@@ -16,8 +16,8 @@ export const routes: Routes = [
     ],
   },
   {
-    path: 'site', component: SiteLayout, children: [
-      {'path': ':name/login', component: HomePage}
+    path: 'site/:restaurant_uri', component: SiteLayout, children: [
+      {'path': 'login', component: HomePage}
     ],
   },
 ];
