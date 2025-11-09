@@ -5,6 +5,7 @@ export interface Restaurant {
   uuid: string;
   uri_name: string;
   logo: string;
+  favicon: string;
 }
 
 export interface RestaurantConfig {

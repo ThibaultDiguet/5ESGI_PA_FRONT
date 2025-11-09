@@ -1,9 +1,9 @@
 import {Component, Input} from '@angular/core';
-import {HlmInput} from "../../../shared/components/ui/ui-input-helm/src";
+import {HlmInput} from "../../../../shared/components/ui/ui-input-helm/src";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HlmFormFieldImports} from '../../../shared/components/ui/ui-form-field-helm/src';
+import {HlmFormFieldImports} from '../../../../shared/components/ui/ui-form-field-helm/src';
 import {BrnInputOtpImports} from '@spartan-ng/brain/input-otp';
-import {HlmInputOtpImports} from '../../../shared/components/ui/ui-input-otp-helm/src';
+import {HlmInputOtpImports} from '../../../../shared/components/ui/ui-input-otp-helm/src';
 
 @Component({
   selector: 'app-login-form',

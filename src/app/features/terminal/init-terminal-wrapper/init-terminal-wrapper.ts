@@ -3,11 +3,11 @@ import {TerminalConfig} from '../../../core/types/terminal';
 import {TerminalService} from '../../../core/services/terminal';
 import {InitTerminalForm} from '../init-terminal-form/init-terminal-form';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {StyleService} from '../../../core/services/style';
 import {LocalStorageService} from '../../../core/services/localStorage';
 import {PreviewTerminalConfig} from '../preview-terminal-config/preview-terminal-config';
 import {ConfigAlreadyExist} from '../config-already-exist/config-already-exist';
 import {Router} from '@angular/router';
+import {ConfigService} from '../../../core/services/config';
 
 @Component({
   selector: 'app-terminal-wrapper',
@@ -26,10 +26,18 @@ export class InitTerminalWrapper {
   uuidNotFound = false;
   configLoadedFromCache = false;
 
-  terminalService: TerminalService = inject(TerminalService);
-  styleService: StyleService = inject(StyleService);
-  localStorageService: LocalStorageService = inject(LocalStorageService);
-  router = inject(Router);
+  terminalService: TerminalService;
+  configService: ConfigService;
+  localStorageService: LocalStorageService;
+  router: Router;
+
+  constructor() {
+    this.router = inject(Router);
+    this.terminalService = inject(TerminalService);
+    this.configService = inject(ConfigService);
+    this.localStorageService = inject(LocalStorageService);
+  }
+
 
   ngOnInit(): void {
     const cachedConfig = this.localStorageService.getItem('terminal-config');
@@ -38,7 +46,7 @@ export class InitTerminalWrapper {
       try {
         this.config = cachedConfig as TerminalConfig;
         this.configLoadedFromCache = true;
-        this.styleService.applyStyles(this.config!.styles);
+        this.configService.applyRestaurantConfig(this.config!);
       } catch {
         this.localStorageService.removeItem('terminal-config');
         this.localStorageService.removeItem('terminal-uuid');
@@ -52,8 +60,7 @@ export class InitTerminalWrapper {
         const config: TerminalConfig = data as TerminalConfig;
         this.config = config;
         this.uuidNotFound = false;
-
-        this.styleService.applyStyles(config.styles);
+        this.configService.applyTerminalConfig(config);
       },
       error: () => {
         this.uuidNotFound = true;
@@ -62,7 +69,7 @@ export class InitTerminalWrapper {
   }
 
   deleteConfig(): void {
-    this.styleService.resetAll();
+    this.configService.resetToDefaultConfig();
     this.config = null;
     this.configLoadedFromCache = false;
     this.localStorageService.removeItem('terminal-config');

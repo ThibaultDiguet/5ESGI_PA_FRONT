@@ -3,7 +3,7 @@ import {LocalStorageService} from '../../../core/services/localStorage';
 import {TerminalConfig} from '../../../core/types/terminal';
 import {NoConfigFound} from '../no-config-found/no-config-found';
 import {JsonPipe} from '@angular/common';
-import {StyleService} from '../../../core/services/style';
+import {ConfigService} from '../../../core/services/config';
 
 @Component({
   selector: 'app-order-layer',
@@ -11,9 +11,14 @@ import {StyleService} from '../../../core/services/style';
   templateUrl: './order-terminal-layer.html',
 })
 export class OrderTerminalLayer {
-  localStorageService: LocalStorageService = inject(LocalStorageService);
-  styleService: StyleService = inject(StyleService);
+  localStorageService: LocalStorageService;
+  configService: ConfigService;
   protected config: TerminalConfig | null = null;
+
+  constructor() {
+    this.localStorageService = inject(LocalStorageService);
+    this.configService = inject(ConfigService);
+  }
 
   ngOnInit(): void {
     this.localStorageService.watchItem<TerminalConfig>('terminal-config').subscribe((cachedConfig) => {
@@ -21,7 +26,7 @@ export class OrderTerminalLayer {
         this.config = cachedConfig;
       } else {
         this.config = null;
-        this.styleService.resetAll();
+        this.configService.resetToDefaultConfig();
       }
     });
   }

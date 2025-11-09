@@ -1,10 +1,10 @@
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {AuthService} from '../../../core/services/auth';
+import {AuthService} from '../../../../core/services/auth';
 import {Component, inject, OnInit} from '@angular/core';
 import {LoginForm} from '../login-form/login-form';
-import {HlmButton} from '../../../shared/components/ui/ui-button-helm/src';
-import {RestaurantConfigContext} from '../../site/services/restaurant-config-context';
-import {StyleService} from '../../../core/services/style';
+import {HlmButton} from '../../../../shared/components/ui/ui-button-helm/src';
+import {RestaurantConfigContext} from '../../services/restaurant-config-context';
+import {ConfigService} from '../../../../core/services/config';
 
 export enum LoginStep {
   EMAIL = 'email',
@@ -24,15 +24,14 @@ export enum LoginStep {
 })
 
 
-export class LoginWrapper implements OnInit{
-  private fb: FormBuilder;
-  private auth:AuthService;
+export class LoginWrapper implements OnInit {
   public restaurantConfig: RestaurantConfigContext;
-  public styleService: StyleService;
-
+  public configService: ConfigService;
   form: FormGroup;
   step: LoginStep = LoginStep.EMAIL;
   isPending = false;
+  private fb: FormBuilder;
+  private auth: AuthService;
 
   constructor() {
     this.fb = inject(FormBuilder);
@@ -41,15 +40,16 @@ export class LoginWrapper implements OnInit{
       otp: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]]
     });
     this.auth = inject(AuthService);
-    this.styleService = inject(StyleService);
+    this.configService = inject(ConfigService);
     this.restaurantConfig = inject(RestaurantConfigContext);
   }
 
   ngOnInit(): void {
     if (this.restaurantConfig?.config()?.styles) {
-      this.styleService.applyStyles(this.restaurantConfig.config()!.styles);
+      this.configService.applyRestaurantConfig(this.restaurantConfig.config()!);
     }
   }
+
   onSubmit() {
     const formEmail = this.form.get('email');
     const formOTP = this.form.get('otp');
