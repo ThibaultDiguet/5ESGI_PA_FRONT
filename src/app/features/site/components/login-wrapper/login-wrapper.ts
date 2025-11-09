@@ -1,12 +1,14 @@
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {AuthService} from '../../../core/services/auth';
-import { Component, inject } from '@angular/core';
+import {AuthService} from '../../../../core/services/auth';
+import {Component, inject, OnInit} from '@angular/core';
 import {LoginForm} from '../login-form/login-form';
-import {HlmButton} from '../../../shared/components/ui/ui-button-helm/src';
+import {HlmButton} from '../../../../shared/components/ui/ui-button-helm/src';
+import {RestaurantConfigContext} from '../../services/restaurant-config-context';
+import {ConfigService} from '../../../../core/services/config';
 
 export enum LoginStep {
   EMAIL = 'email',
-  OTP = 'otp'
+  OTP = 'otp',
 }
 
 @Component({
@@ -22,19 +24,30 @@ export enum LoginStep {
 })
 
 
-export class LoginWrapper {
-  private fb = inject(FormBuilder);
-  private auth = inject(AuthService);
-
+export class LoginWrapper implements OnInit {
+  public restaurantConfig: RestaurantConfigContext;
+  public configService: ConfigService;
   form: FormGroup;
   step: LoginStep = LoginStep.EMAIL;
   isPending = false;
+  private fb: FormBuilder;
+  private auth: AuthService;
 
   constructor() {
+    this.fb = inject(FormBuilder);
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       otp: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]]
     });
+    this.auth = inject(AuthService);
+    this.configService = inject(ConfigService);
+    this.restaurantConfig = inject(RestaurantConfigContext);
+  }
+
+  ngOnInit(): void {
+    if (this.restaurantConfig?.config()?.styles) {
+      this.configService.applyRestaurantConfig(this.restaurantConfig.config()!);
+    }
   }
 
   onSubmit() {

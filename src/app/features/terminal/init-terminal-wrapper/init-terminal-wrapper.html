@@ -1,0 +1,19 @@
+@if (!config) {
+  <app-init-terminal-form
+    (uuidSubmitted)="onUuidSubmitted($event)"
+    [uuidNotFound]="uuidNotFound"
+  />
+} @else if (!configLoadedFromCache) {
+    <app-preview-terminal-config
+      [config]="config"
+      (cancelInit)="deleteConfig()"
+      (saveConfig)="saveConfig()"
+    />
+} @else {
+  <app-config-already-exist
+    [config]="config"
+    (deleteConfig)="deleteConfig()"
+    (synchronizeConfig)="synchronizeConfig()"
+
+  />
+}

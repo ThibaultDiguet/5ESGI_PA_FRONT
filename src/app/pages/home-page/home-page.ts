@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {LoginWrapper} from '../../features/site-auth/login-wrapper/login-wrapper';
+import {LoginWrapper} from '../../features/site/components/login-wrapper/login-wrapper';
 
 @Component({
   selector: 'app-home-page',
@@ -12,4 +12,10 @@ import {LoginWrapper} from '../../features/site-auth/login-wrapper/login-wrapper
 })
 export class HomePage {
 
+  constructor() {
+  }
+
+  ngOnInit(): void {
+    // document.documentElement.style.setProperty('--primary', 'red')
+  }
 }

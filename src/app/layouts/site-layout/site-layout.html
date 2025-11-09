@@ -1,0 +1,6 @@
+@if (isFetchingConfig) {
+  <app-loading-config/>
+} @else {
+  <app-navbar></app-navbar>
+  <router-outlet></router-outlet>
+}
