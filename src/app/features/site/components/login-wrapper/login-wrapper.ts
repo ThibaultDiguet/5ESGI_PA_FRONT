@@ -3,7 +3,7 @@ import {AuthService} from '../../../../core/services/auth';
 import {Component, inject, OnInit} from '@angular/core';
 import {LoginForm} from '../login-form/login-form';
 import {HlmButton} from '../../../../shared/components/ui/ui-button-helm/src';
-import {RestaurantConfigContext} from '../../services/restaurant-config-context';
+import {RestaurantConfigStore} from '../../../../core/stores/restaurantConfigStore';
 import {ConfigService} from '../../../../core/services/config';
 
 export enum LoginStep {
@@ -25,7 +25,7 @@ export enum LoginStep {
 
 
 export class LoginWrapper implements OnInit {
-  public restaurantConfig: RestaurantConfigContext;
+  public restaurantConfig: RestaurantConfigStore;
   public configService: ConfigService;
   form: FormGroup;
   step: LoginStep = LoginStep.EMAIL;
@@ -41,7 +41,7 @@ export class LoginWrapper implements OnInit {
     });
     this.auth = inject(AuthService);
     this.configService = inject(ConfigService);
-    this.restaurantConfig = inject(RestaurantConfigContext);
+    this.restaurantConfig = inject(RestaurantConfigStore);
   }
 
   ngOnInit(): void {

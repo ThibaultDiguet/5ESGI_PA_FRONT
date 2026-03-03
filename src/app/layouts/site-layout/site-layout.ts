@@ -3,7 +3,7 @@ import {Navbar} from "../../shared/components/site/navbar/navbar";
 import {ActivatedRoute, Router, RouterOutlet} from "@angular/router";
 import {RestaurantService} from '../../core/services/restaurant';
 import {RestaurantConfig} from '../../core/types/restaurant';
-import {RestaurantConfigContext} from '../../features/site/services/restaurant-config-context';
+import {RestaurantConfigStore} from '../../core/stores/restaurantConfigStore';
 import {LoadingConfig} from '../../features/site/components/loading-config/loading-config';
 
 @Component({
@@ -13,11 +13,11 @@ import {LoadingConfig} from '../../features/site/components/loading-config/loadi
     RouterOutlet,
     LoadingConfig
   ],
-  providers: [RestaurantConfigContext],
+  providers: [RestaurantConfigStore],
   templateUrl: './site-layout.html'
 })
 export class SiteLayout implements OnInit {
-  restaurantConfig: RestaurantConfigContext;
+  restaurantConfig: RestaurantConfigStore;
   restaurant_uri!: string;
   route: ActivatedRoute;
   restaurantService: RestaurantService;
@@ -26,7 +26,7 @@ export class SiteLayout implements OnInit {
 
   constructor() {
     this.router = inject(Router);
-    this.restaurantConfig = inject(RestaurantConfigContext);
+    this.restaurantConfig = inject(RestaurantConfigStore);
     this.route = inject(ActivatedRoute);
     this.restaurantService = inject(RestaurantService);
     this.isFetchingConfig = true;

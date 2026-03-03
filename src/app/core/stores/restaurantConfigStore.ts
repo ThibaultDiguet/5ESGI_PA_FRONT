@@ -1,10 +1,10 @@
 import {Injectable, signal} from '@angular/core';
-import {RestaurantConfig} from '../../../core/types/restaurant';
+import {RestaurantConfig} from '../types/restaurant';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RestaurantConfigContext {
+export class RestaurantConfigStore {
   config = signal<RestaurantConfig | null>(null);
 
   setConfig(config: RestaurantConfig) {

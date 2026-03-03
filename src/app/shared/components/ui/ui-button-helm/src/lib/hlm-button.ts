@@ -22,8 +22,10 @@ export const buttonVariants = cva(
       },
       size: {
         default: 'px-5 py-3 has-[>ng-icon]:px-3',
-        sm: 'h-8 gap-1.5 rounded-md px-3 has-[>ng-icon]:px-2.5',
-        lg: 'h-10 rounded-md px-6 has-[>ng-icon]:px-4',
+        sm: 'h-8 gap-1.5 rounded-sm px-3 has-[>ng-icon]:px-2.5',
+        lg: 'h-10 rounded-lg px-6 has-[>ng-icon]:px-4',
+        xl: 'h-12 rounded-xl px-8 has-[>ng-icon]:px-6',
+        xxl: 'h-14 rounded-2xl px-10 has-[>ng-icon]:px-8',
         icon: 'size-9',
       },
     },

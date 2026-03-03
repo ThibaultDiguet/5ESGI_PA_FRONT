@@ -6,6 +6,7 @@ export interface Restaurant {
   uri_name: string;
   logo: string;
   favicon: string;
+  welcome_image: string;
 }
 
 export interface RestaurantConfig {

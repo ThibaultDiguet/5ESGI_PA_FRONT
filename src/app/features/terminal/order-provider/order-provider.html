@@ -1,0 +1,30 @@
+<!--<div class="flex gap-4 flex-row absolute top-0 right-0 w-fit p-4">-->
+<!--  <button hlmBtn type="button" (click)="this.stepService.back()">Prédédent</button>-->
+<!--  <button hlmBtn type="button" (click)="this.stepService.next()">Suivant</button>-->
+<!--</div>-->
+
+@switch (this.stepService.get()) {
+  @case (Steps.WELCOME) {
+    <app-order-welcome/>
+  }
+
+  @case (Steps.SERVICE_MODE) {
+    <app-order-service-mode/>
+  }
+
+  @case (Steps.AUTHENTICATION) {
+    <app-order-authentification/>
+  }
+
+  @case (Steps.MENU) {
+    <app-order-menu-layout/>
+  }
+
+  @case (Steps.CHECKOUT) {
+    <app-order-checkout/>
+  }
+
+  @case (Steps.CONFIRMATION) {
+    <app-order-confirmation/>
+  }
+}
