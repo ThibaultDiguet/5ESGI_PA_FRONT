@@ -72,4 +72,17 @@ body {
 @theme {
   --color-tertiary: oklch(0.985 0 89.876);
   --color-tertiary-foreground: oklch(0.129 0.042 264.695);
+
+  --animate-slide-in-top: slide-in-top 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-30px) scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
 }

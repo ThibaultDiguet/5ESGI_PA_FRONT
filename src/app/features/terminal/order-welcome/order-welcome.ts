@@ -1,7 +1,7 @@
-import {Component, inject} from '@angular/core';
-import {RestaurantConfigStore} from '../../../core/stores/restaurantConfigStore';
-import {TerminalSteps} from '../../../core/services/order/terminalSteps';
-import {IconHand} from '../../../shared/components/icons/icon-hand';
+import { Component, inject } from '@angular/core';
+import { RestaurantConfigStore } from '../../../core/stores/restaurantConfigStore';
+import { IconHand } from '../../../shared/components/icons/icon-hand';
+import { TerminalOrderStore } from '../../../core/stores/terminalOrderStore';
 
 @Component({
   selector: 'app-order-welcome',
@@ -10,9 +10,10 @@ import {IconHand} from '../../../shared/components/icons/icon-hand';
 })
 export class OrderWelcome {
   public restaurantConfig: RestaurantConfigStore;
-  public terminalSteps: TerminalSteps;
+  public terminalOrderStore: TerminalOrderStore;
+
   constructor() {
     this.restaurantConfig = inject(RestaurantConfigStore);
-    this.terminalSteps = inject(TerminalSteps);
+    this.terminalOrderStore = inject(TerminalOrderStore);
   }
 }
