@@ -1,1 +1,44 @@
-<button (click)="terminalOrderStore.stepService.reset()" hlmButton>abandonner la commande</button>
+<div class="w-full h-full overflow-hidden flex items-center justify-center bg-zinc-50">
+  <div class="flex flex-col gap-10 w-3xl m-16">
+    <div class="flex flex-col gap-2 text-center">
+      <h1 class="text-3xl font-bold text-zinc-900">compte de fidélité</h1>
+      <p class="text-lg text-zinc-600 font-normal">identifiez-vous pour cumuler des points et profiter d'offres
+        exclusives.</p>
+    </div>
+    <div class="flex flex-row gap-16 w-full">
+      <button
+        (click)="terminalOrderStore.stepService.set(Steps.AUTHENTICATION_SCAN)"
+        class="animate-slide-in-top [animation-delay:0.05s] bg-zinc-100 flex-1 aspect-square flex flex-col items-center justify-center rounded-xl shadow-xl">
+        <app-icon-qr-scan class="text-primary" size="104px"/>
+        <div class="flex flex-col gap-2 p-4">
+          <h1 class="text-center text-zinc-900 font-semibold text-xl">scanner ma carte</h1>
+          <p class="text-md text-zinc-600 font-normal text-center">scannez votre QR code pour vous
+            identifier instantanément.</p>
+        </div>
+      </button>
+
+      <button
+        (click)="terminalOrderStore.stepService.set(Steps.AUTHENTICATION_CODE)"
+        class="animate-slide-in-top [animation-delay:0.125s] bg-primary flex-1 aspect-square flex flex-col items-center justify-center rounded-xl shadow-xl"
+      >
+        <app-icon-code-entry class="text-zinc-50" size="104px"/>
+        <div class="flex flex-col gap-2 p-4">
+          <h1 class="text-center text-zinc-100 font-semibold text-xl">saisir mon code</h1>
+          <p class="text-md text-zinc-50 font-normal text-center">tapez manuellement votre code de fidélité à l’aide du
+            pavé numérique.</p>
+        </div>
+      </button>
+    </div>
+    <div class="flex flex-col gap-2">
+      <button (click)="terminalOrderStore.stepService.next()" hlmBtn size="xxl">
+        continuer sans compte
+      </button>
+      <button (click)="terminalOrderStore.stepService.reset()" hlmBtn size="xxl" variant="tertiary">
+        abandonner la commande
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
