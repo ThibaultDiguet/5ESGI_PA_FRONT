@@ -1,14 +1,23 @@
-import {ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection} from '@angular/core';
-import {provideRouter} from '@angular/router';
+import {
+  ApplicationConfig,
+  provideBrowserGlobalErrorListeners,
+  provideZoneChangeDetection,
+} from '@angular/core';
+import { provideRouter } from '@angular/router';
 
-import {routes} from './app.routes';
-import {provideHttpClient} from '@angular/common/http';
+import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
+import { provideLottieOptions } from 'ngx-lottie';
+import player from 'lottie-web';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZoneChangeDetection({eventCoalescing: true}),
+    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient()
-  ]
+    provideHttpClient(),
+    provideLottieOptions({
+      player: () => player,
+    }),
+  ],
 };
