@@ -14,4 +14,6 @@ export interface TerminalConfig {
 
 export interface TerminalOrder {
   serviceMode: 'takeaway' | 'dine-in';
+  customerCode: string;
+  isLogged: boolean;
 }

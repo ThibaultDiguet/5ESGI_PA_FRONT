@@ -1,13 +1,13 @@
 <div class="w-full h-full overflow-hidden flex items-center justify-center bg-zinc-50">
   <div class="flex flex-col gap-10 w-3xl m-16">
     <div class="flex flex-col gap-2 text-center">
-      <h1 class="text-3xl font-bold text-zinc-900">compte de fidélité</h1>
-      <p class="text-lg text-zinc-600 font-normal">identifiez-vous pour cumuler des points et profiter d'offres
-        exclusives.</p>
+      <h1 class="text-3xl font-bold text-zinc-900">identifiez-vous</h1>
+      <p class="text-lg text-zinc-600 font-normal">scannez votre carte de fidélité ou saisissez votre code pour profiter
+        de vos avantages</p>
     </div>
     <div class="flex flex-row gap-16 w-full">
       <button
-        (click)="terminalOrderStore.stepService.set(Steps.AUTHENTICATION_SCAN)"
+        (click)="terminalOrderStore.stepService.setAuthentificationMethodToScan()"
         class="animate-slide-in-top [animation-delay:0.05s] bg-zinc-100 flex-1 aspect-square flex flex-col items-center justify-center rounded-xl shadow-xl">
         <app-icon-qr-scan class="text-primary" size="104px"/>
         <div class="flex flex-col gap-2 p-4">
@@ -18,7 +18,7 @@
       </button>
 
       <button
-        (click)="terminalOrderStore.stepService.set(Steps.AUTHENTICATION_CODE)"
+        (click)="terminalOrderStore.stepService.setAuthentificationMethodToCode()"
         class="animate-slide-in-top [animation-delay:0.125s] bg-primary flex-1 aspect-square flex flex-col items-center justify-center rounded-xl shadow-xl"
       >
         <app-icon-code-entry class="text-zinc-50" size="104px"/>

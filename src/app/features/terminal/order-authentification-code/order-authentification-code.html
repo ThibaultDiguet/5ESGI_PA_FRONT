@@ -1,1 +1,25 @@
-<h1>Authent by code</h1>
+<div class="w-full h-full overflow-hidden flex items-center justify-center bg-zinc-50">
+  <div class="flex flex-col w-3xl m-16 gap-6">
+    <div class="flex flex-col gap-2 text-center">
+      <h1 class="text-3xl font-bold text-zinc-900">saisissez votre code</h1>
+      <p class="text-lg text-zinc-600 font-normal">tapez les chiffres de votre code de fidélité à l'aide du pavé
+        numérique</p>
+    </div>
+
+    <div class="w-3xs mx-auto h-96">
+      <app-numeric-keyboard-code (valueChange)="onCodeChange($event)"/>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <button (click)="terminalOrderStore.stepService.setAuthentificationMethodToScan()" hlmBtn size="xxl">
+        scanner ma carte
+      </button>
+      <button (click)="terminalOrderStore.stepService.next()" hlmBtn size="xxl" variant="tertiary">
+        continuer sans compte
+      </button>
+    </div>
+  </div>
+</div>
+
+
+

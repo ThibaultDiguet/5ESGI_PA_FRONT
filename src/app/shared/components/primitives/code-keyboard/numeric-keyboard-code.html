@@ -1,0 +1,48 @@
+<div class="flex flex-col items-center justify-center w-full h-full mx-auto gap-3">
+  <input
+    [id]="id()"
+    [placeholder]="placeholder()"
+    [value]="code()"
+    class="h-16 w-full text-center md:text-2xl text-2xl"
+    hlmInput
+    readonly
+    type="password"
+  />
+
+  <div class="grid grid-cols-3 gap-3 w-full">
+
+    @for (digit of digits; track digit) {
+      <button
+        hlmBtn
+        variant="input"
+        size="rectangle"
+        (click)="addDigit(digit)">
+        {{ digit }}
+      </button>
+    }
+
+    <button
+      (click)="clearAll()"
+      hlmBtn
+      size="rectangle"
+      variant="input">
+      <app-icon-close class="text-zinc-800" size="28"/>
+    </button>
+
+    <button
+      (click)="addDigit('0')"
+      hlmBtn
+      size="rectangle"
+      variant="input">
+      0
+    </button>
+
+    <button
+      (click)="deleteLast()"
+      hlmBtn
+      size="rectangle"
+      variant="input">
+      <app-icon-backspace class="text-zinc-800" size="28"/>
+    </button>
+  </div>
+</div>

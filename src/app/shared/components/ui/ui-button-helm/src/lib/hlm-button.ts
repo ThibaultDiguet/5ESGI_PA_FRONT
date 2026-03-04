@@ -22,6 +22,8 @@ export const buttonVariants = cva(
           'bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 border',
         ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
+        input:
+          'font-bold active:scale-95 transition-transform text-zinc-800 border-input aspect-square bg-input/30 border text-xl rounded-md',
       },
       size: {
         default: 'px-5 py-3 has-[>ng-icon]:px-3',
@@ -30,6 +32,7 @@ export const buttonVariants = cva(
         xl: 'h-12 rounded-xl px-8 has-[>ng-icon]:px-6',
         xxl: 'h-14 rounded-2xl px-10 has-[>ng-icon]:px-8',
         icon: 'size-9',
+        rectangle: 'h-16 w-full',
       },
     },
     defaultVariants: {
