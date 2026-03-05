@@ -1,5 +1,11 @@
-<div class="flex flex-col h-full">
-  <app-order-header></app-order-header>
-  <app-order-body class="flex-1"></app-order-body>
-  <app-order-navbar></app-order-navbar>
-</div>
+@if (isLoading()) {
+  <div class="w-full h-full flex items-center justify-center">
+    <app-loading-state/>
+  </div>
+} @else {
+  <div class="flex flex-col h-full">
+    <app-order-header/>
+    <app-order-body class="flex-1"/>
+    <app-order-navbar [categories]="categories()"/>
+  </div>
+}

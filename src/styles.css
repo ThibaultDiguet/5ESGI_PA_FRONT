@@ -2,6 +2,7 @@
 @import '@angular/cdk/overlay-prebuilt.css';
 
 @import "tailwindcss";
+@import 'tailwind-scrollbar-hide/v4';
 @import '@spartan-ng/brain/hlm-tailwind-preset.css';
 
 
@@ -95,5 +96,4 @@ body {
       transform: translateY(0);
     }
   }
-
 }

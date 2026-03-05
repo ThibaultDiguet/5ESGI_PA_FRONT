@@ -24,6 +24,8 @@ export const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
         input:
           'font-bold active:scale-95 transition-transform text-zinc-800 border-input aspect-square bg-input/30 border text-xl rounded-md',
+        category:
+          'bg-transparent text-zinc-600 hover:text-primary active:text-primary aspect-square flex-col !p-0',
       },
       size: {
         default: 'px-5 py-3 has-[>ng-icon]:px-3',

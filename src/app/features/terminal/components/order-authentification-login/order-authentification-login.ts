@@ -21,7 +21,7 @@ export class OrderAuthentificationLogin implements OnInit {
   public restaurantConfigStore: RestaurantConfigStore;
 
   public isLoading = signal<boolean>(true);
-  public error = signal<string | null>(null);
+  public error = signal<boolean>(false);
 
   constructor() {
     this.terminalOrderStore = inject(TerminalOrderStore);
@@ -34,7 +34,7 @@ export class OrderAuthentificationLogin implements OnInit {
     const restaurantUuid = this.restaurantConfigStore.config()?.restaurant.uuid;
 
     if (!restaurantUuid) {
-      this.error.set('erreur de configuration de la borne de commande');
+      this.error.set(true);
       this.isLoading.set(false);
       return;
     }
@@ -44,12 +44,8 @@ export class OrderAuthentificationLogin implements OnInit {
         this.terminalOrderStore.customer.set(response);
         this.isLoading.set(false);
       },
-      error: (err) => {
-        if (err.status === 404) {
-          this.error.set('Aucun compte trouvé avec ce code.');
-        } else {
-          this.error.set('Une erreur technique est survenue.');
-        }
+      error: () => {
+        this.error.set(true);
         this.isLoading.set(false);
       },
     });

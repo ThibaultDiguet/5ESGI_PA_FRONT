@@ -1,4 +1,4 @@
-import {Style} from './style';
+import { Style } from './style';
 
 export interface Restaurant {
   name: string;
@@ -12,4 +12,19 @@ export interface Restaurant {
 export interface RestaurantConfig {
   restaurant: Restaurant;
   styles: Style[];
+}
+
+export interface Category {
+  name: string;
+  iconUrl: string;
+}
+
+export interface Item {
+  name: string;
+  imageUrl: string;
+  categories: string[];
+  price: number;
+  description: string;
+  allergens: string[];
+  nutritionalValues: string[];
 }
