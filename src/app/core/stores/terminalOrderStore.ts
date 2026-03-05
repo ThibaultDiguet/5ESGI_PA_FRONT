@@ -1,24 +1,33 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { TerminalOrder } from '../types/terminal';
 import { TerminalSteps } from '../services/order/terminalSteps';
+import { Customer } from '../../shared/types/client';
+import { ServiceMode } from '../types/terminal';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TerminalOrderStore {
-  config = signal<TerminalOrder | null>(null);
-  stepService: TerminalSteps;
+  serviceMode = signal<ServiceMode>(ServiceMode.DINE_IN);
+  customer = signal<Customer | null>(null);
 
-  constructor() {
-    this.stepService = inject(TerminalSteps);
+  isLogged = signal<boolean>(false);
+
+  stepService = inject(TerminalSteps);
+
+  setServiceMode(mode: ServiceMode) {
+    this.serviceMode.set(mode);
   }
 
-  setOrderServiceMode(mode: 'takeaway' | 'dine-in') {
-    this.config.update((state) => {
-      return {
-        ...(state ?? ({} as TerminalOrder)),
-        serviceMode: mode,
-      };
-    });
+  setCustomer(customer: Customer | null) {
+    this.customer.set(customer);
+  }
+
+  setIsLogged(isLogged: boolean) {
+    this.isLogged.set(isLogged);
+  }
+
+  resetOrder() {
+    this.customer.set(null);
+    this.serviceMode.set(ServiceMode.DINE_IN);
   }
 }

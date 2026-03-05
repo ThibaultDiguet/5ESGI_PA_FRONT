@@ -12,8 +12,7 @@ export interface TerminalConfig {
   styles: Style[];
 }
 
-export interface TerminalOrder {
-  serviceMode: 'takeaway' | 'dine-in';
-  customerCode: string;
-  isLogged: boolean;
+export enum ServiceMode {
+  TAKEAWAY = 'takeaway',
+  DINE_IN = 'dine-in',
 }

@@ -1,11 +1,12 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {LocalStorageService} from '../../../core/services/localStorage';
-import {ConfigService} from '../../../core/services/config';
-import {TerminalConfig} from '../../../core/types/terminal';
-import {NoConfigFound} from '../../../features/terminal/no-config-found/no-config-found';
-import {OrderProvider} from '../../../features/terminal/order-provider/order-provider';
-import {RestaurantConfig} from '../../../core/types/restaurant';
-import {RestaurantConfigStore} from '../../../core/stores/restaurantConfigStore';
+import { Component, inject, OnInit } from '@angular/core';
+import { LocalStorageService } from '../../../core/services/localStorage';
+import { ConfigService } from '../../../core/services/config';
+import { TerminalConfig } from '../../../core/types/terminal';
+import { NoConfigFound } from '../../../features/terminal/components/no-config-found/no-config-found';
+import { OrderProvider } from '../../../features/terminal/components/order-provider/order-provider';
+import { RestaurantConfig } from '../../../core/types/restaurant';
+import { RestaurantConfigStore } from '../../../core/stores/restaurantConfigStore';
+
 @Component({
   selector: 'app-terminal-order',
   imports: [NoConfigFound, OrderProvider],
@@ -21,6 +22,7 @@ export class TerminalOrder implements OnInit {
     this.configService = inject(ConfigService);
     this.restaurantConfig = inject(RestaurantConfigStore);
   }
+
   ngOnInit(): void {
     this.localStorageService
       .watchItem<TerminalConfig>('terminal-config')
