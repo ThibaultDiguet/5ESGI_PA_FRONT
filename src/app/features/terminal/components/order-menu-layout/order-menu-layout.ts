@@ -5,7 +5,7 @@ import { OrderBody } from '../order-body/order-body';
 import { RestaurantConfigStore } from '../../../../core/stores/restaurantConfigStore';
 import { RestaurantService } from '../../../../core/services/restaurant';
 import { LoadingState } from '../../../../shared/components/primitives/loading-state/loading-state';
-import { Category } from '../../../../core/types/restaurant';
+import { TerminalConfigStore } from '../../../../core/stores/terminalConfigStore';
 
 @Component({
   selector: 'app-order-menu-layout',
@@ -15,13 +15,14 @@ import { Category } from '../../../../core/types/restaurant';
 export class OrderMenuLayout implements OnInit {
   public isLoading = signal<boolean>(true);
   public error = signal<boolean>(false);
-  public categories = signal<Category[]>([]);
   public restaurantConfigStore: RestaurantConfigStore;
   public restaurantService: RestaurantService;
+  public terminalConfigStore: TerminalConfigStore;
 
   constructor() {
     this.restaurantConfigStore = inject(RestaurantConfigStore);
     this.restaurantService = inject(RestaurantService);
+    this.terminalConfigStore = inject(TerminalConfigStore);
   }
 
   ngOnInit() {
@@ -36,7 +37,8 @@ export class OrderMenuLayout implements OnInit {
     this.restaurantService.getMenuByUuid(restaurantUuid, 'success').subscribe({
       next: (response) => {
         this.isLoading.set(false);
-        this.categories.set(response.categories);
+        this.terminalConfigStore.categories.set(response.categories);
+        this.terminalConfigStore.setSelectedCategory(response.categories[0]);
       },
       error: () => {
         this.error.set(true);

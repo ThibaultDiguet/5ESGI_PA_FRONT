@@ -15,6 +15,7 @@ export interface RestaurantConfig {
 }
 
 export interface Category {
+  uuid: string;
   name: string;
   iconUrl: string;
 }
