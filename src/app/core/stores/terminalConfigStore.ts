@@ -13,8 +13,6 @@ export class TerminalConfigStore {
     const selectedName = this.selectedCategory()?.name;
     const allItems = this.items();
 
-    console.log(this.selectedCategory()?.name);
-
     if (!selectedName) return [];
 
     return allItems.filter((item) => item.categories?.includes(selectedName));

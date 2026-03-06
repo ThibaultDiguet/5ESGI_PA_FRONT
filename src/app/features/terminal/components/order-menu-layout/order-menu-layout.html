@@ -3,9 +3,9 @@
     <app-loading-state/>
   </div>
 } @else {
-  <div class="flex flex-col h-full">
-    <app-order-header/>
-    <app-order-body class="flex-1"/>
-    <app-order-navbar/>
+  <div class="flex flex-col h-screen overflow-hidden">
+    <app-order-header class="flex-none"/>
+    <app-order-body class="flex-1 min-h-0"/>
+    <app-order-navbar class="flex-none"/>
   </div>
 }

@@ -1,19 +1,27 @@
-<div class="h-full w-full p-4">
-  @for (category of [terminalConfigStore.selectedCategory()]; track category?.uuid) {
-    <div class="animate-slide-up-fade">
-      <h1 class="text-2xl text-zinc-900 font-semibold">
-        {{ category?.name }}
-      </h1>
-      <p class="text-zinc-600 text-base font-normal">{{ category?.description }}</p>
+<div class="h-full w-full px-8 py-4 flex-1 bg-zinc-200 overflow-y-auto scrollbar-hide">
 
-      <div class="grid grid-cols-3 gap-6">
-        @for (item of terminalConfigStore.filteredItems(); track item.uuid) {
-          <div class="w-full h-full">
-            <img src="{{item.imageUrl}}" alt="{{item.name}}"/>
-            {{ item.name }}
-          </div>
-        }
-      </div>
-    </div>
-  }
+  <div class="grid grid-cols-2 gap-4">
+    @for (item of terminalConfigStore.filteredItems(); track item.uuid) {
+      <img [src]="item.imageUrl" class="flex-1" alt="image {{item.name}}"/>
+    }
+  </div>
+  <!--  @for (category of [terminalConfigStore.selectedCategory()]; track category?.uuid) {-->
+
+  <!--    &lt;!&ndash;      <h1 class="text-2xl text-zinc-900 font-semibold">&ndash;&gt;-->
+  <!--      &lt;!&ndash;        {{ category?.name }}&ndash;&gt;-->
+  <!--      &lt;!&ndash;      </h1>&ndash;&gt;-->
+  <!--      &lt;!&ndash;      <p class="text-zinc-600 text-base font-normal">{{ category?.description }}</p>&ndash;&gt;-->
+
+  <!--    <div class="grid grid-cols-2 gap-4 ">-->
+
+  <!--      @for (item of terminalConfigStore.filteredItems(); track item.uuid) {-->
+  <!--        <div class="bg-white rounded-xl border border-zinc-200 flex flex-col">-->
+  <!--          <img [src]="item.imageUrl" class="flex-1 object-cover"/>-->
+  <!--          <div class="p-3 bg-zinc-50 text-center font-medium">-->
+  <!--            {{ item.name }}-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      }-->
+  <!--    </div>-->
+  <!--  }-->
 </div>
