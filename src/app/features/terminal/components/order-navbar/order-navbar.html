@@ -5,7 +5,7 @@
     @for (category of terminalConfigStore.categories(); track category.uuid) {
       <button
         hlmBtn
-        (click)="terminalConfigStore.setSelectedCategory(category)"
+        (click)="terminalConfigStore.selectedCategory.set(category)"
         [class]="terminalConfigStore.selectedCategory()  === category && 'text-primary'"
         variant="category"
         class="flex-none flex flex-col items-center"

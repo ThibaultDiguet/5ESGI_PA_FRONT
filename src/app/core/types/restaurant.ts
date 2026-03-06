@@ -17,15 +17,17 @@ export interface RestaurantConfig {
 export interface Category {
   uuid: string;
   name: string;
+  description: string;
   iconUrl: string;
 }
 
 export interface Item {
+  uuid: string;
   name: string;
   imageUrl: string;
   categories: string[];
   price: number;
   description: string;
-  allergens: string[];
-  nutritionalValues: string[];
+  allergens: string;
+  nutritionalValues: string;
 }

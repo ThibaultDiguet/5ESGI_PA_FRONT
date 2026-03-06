@@ -38,7 +38,8 @@ export class OrderMenuLayout implements OnInit {
       next: (response) => {
         this.isLoading.set(false);
         this.terminalConfigStore.categories.set(response.categories);
-        this.terminalConfigStore.setSelectedCategory(response.categories[0]);
+        this.terminalConfigStore.selectedCategory.set(response.categories[0]);
+        this.terminalConfigStore.items.set(response.items);
       },
       error: () => {
         this.error.set(true);

@@ -1,3 +1,19 @@
-<div class="h-full w-full">
+<div class="h-full w-full p-4">
+  @for (category of [terminalConfigStore.selectedCategory()]; track category?.uuid) {
+    <div class="animate-slide-up-fade">
+      <h1 class="text-2xl text-zinc-900 font-semibold">
+        {{ category?.name }}
+      </h1>
+      <p class="text-zinc-600 text-base font-normal">{{ category?.description }}</p>
 
+      <div class="grid grid-cols-3 gap-6">
+        @for (item of terminalConfigStore.filteredItems(); track item.uuid) {
+          <div class="w-full h-full">
+            <img src="{{item.imageUrl}}" alt="{{item.name}}"/>
+            {{ item.name }}
+          </div>
+        }
+      </div>
+    </div>
+  }
 </div>

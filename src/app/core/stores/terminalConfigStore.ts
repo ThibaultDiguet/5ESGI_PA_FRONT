@@ -1,5 +1,5 @@
-import { Injectable, signal } from '@angular/core';
-import { Category } from '../types/restaurant';
+import { computed, Injectable, signal } from '@angular/core';
+import { Category, Item } from '../types/restaurant';
 
 @Injectable({
   providedIn: 'root',
@@ -7,16 +7,22 @@ import { Category } from '../types/restaurant';
 export class TerminalConfigStore {
   categories = signal<Category[]>([]);
   selectedCategory = signal<Category | null>(null);
+  items = signal<Item[]>([]);
 
-  setCategories(categories: Category[]) {
-    this.categories.set(categories);
-  }
+  filteredItems = computed(() => {
+    const selectedName = this.selectedCategory()?.name;
+    const allItems = this.items();
 
-  setSelectedCategory(category: Category) {
-    this.selectedCategory.set(category);
-  }
+    console.log(this.selectedCategory()?.name);
+
+    if (!selectedName) return [];
+
+    return allItems.filter((item) => item.categories?.includes(selectedName));
+  });
 
   clear() {
     this.categories.set([]);
+    this.selectedCategory.set(null);
+    this.items.set([]);
   }
 }
