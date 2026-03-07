@@ -1,16 +1,16 @@
-<div class="h-30 bg-zinc-50 px-8 py-4">
+<div class="h-30 px-8 py-4">
   <app-horizontal-slider
     customClass="flex flex-row flex-nowrap gap-16 h-full w-full justify-center-safe"
   >
     @for (category of terminalConfigStore.categories(); track category.uuid) {
       <button
-        hlmBtn
         (click)="terminalConfigStore.selectedCategory.set(category)"
         [class]="terminalConfigStore.selectedCategory()  === category && 'text-primary'"
-        variant="category"
         class="flex-none flex flex-col items-center"
+        hlmBtn
+        variant="category"
       >
-        <app-custom-icon path="{{category.iconUrl}}" class="h-20 w-auto"/>
+        <app-custom-icon class="h-20 w-auto" path="{{category.iconUrl}}"/>
         <p class="text-base font-semibold">{{ category.name }}</p>
       </button>
     }

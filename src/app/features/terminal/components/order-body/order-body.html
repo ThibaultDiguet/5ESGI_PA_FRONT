@@ -1,29 +1,42 @@
 <div class="h-full w-full px-8 py-4 overflow-hidden relative">
   @if (terminalConfigStore.filteredItems().length > 6) {
-    <button (click)="prevPage()" class="absolute top-[calc(50%-1.5rem)] left-2 z-10" hlmBtn><
+    <button (click)="prevPage()"
+            animation="pushLeft"
+            class="absolute top-[calc(50%-1.75rem)] left-2 z-10 border-none animate-entrance-left"
+            hlmBtn
+            variant="terminalPrimary"
+    >
+      <ng-icon class="!text-zinc-50 [&_path]:fill-none [--ng-icon__stroke-width:0.20rem]" hlm name="lucideChevronLeft"
+               size="lg"/>
     </button>
-    <button (click)="nextPage()" class="absolute top-[calc(50%-1.5rem)] right-2 z-10" hlmBtn>>
+    <button (click)="nextPage()"
+            animation="pushRight"
+            class="absolute top-[calc(50%-1.75rem)] right-2 z-10 border-none animate-entrance-right"
+            hlmBtn
+            variant="terminalPrimary">
+      <ng-icon class="!text-zinc-50 [&_path]:fill-none [--ng-icon__stroke-width:0.20rem]" hlm name="lucideChevronRight"
+               size="lg"/>
     </button>
   }
 
-  @for (category of [terminalConfigStore.selectedCategory()]; track category!.uuid + +actualPage()) {
-    <div class="grid grid-cols-3 auto-rows-[calc(50%-0.5rem)] gap-4 h-full animate-slide-up-fade">
-      @for (item of paginatedItems(); track item.uuid) {
-        <button class="relative overflow-hidden rounded-2xl h-full text-left">
-          <img [src]="item.imageUrl"
-               class="w-full h-full object-cover"
-               alt="image {{item.name}}"/>
-          <div
-            class="flex flex-col justify-end absolute bottom-0 left-0 w-full h-3/5 bg-gradient-to-t from-zinc-800/70 via-zinc-800/50 to-transparent z-1 p-4">
-            <div class="flex flex-row gap-4 items-end">
-              <h2 class="text-shadow-md font-extrabold text-2xl text-zinc-50">{{ item.name }}</h2>
-              <p class="font-normal text-xl text-zinc-50">{{ item.price }}€</p>
-            </div>
 
-            <p class="font-normal text-base tracking-tighter text-zinc-50">{{ item.description }}</p>
+  <div class="grid grid-cols-3 auto-rows-[calc(50%-0.5rem)] gap-4 h-full">
+    @for (item of paginatedItems(); track item.uuid + item.name) {
+      <button class="relative overflow-hidden rounded-2xl h-full text-left animate-slide-up-fade">
+        <img [src]="item.imageUrl"
+             alt="image {{item.name}}"
+             class="w-full h-full object-cover"/>
+        <div
+          class="flex flex-col justify-end absolute bottom-0 left-0 w-full h-3/5 bg-gradient-to-t from-zinc-800/70 via-zinc-800/50 to-transparent z-1 p-4">
+          <div class="flex flex-row gap-4 items-end">
+            <h2 class="text-shadow-md font-extrabold text-xl text-zinc-50">{{ item.name }}</h2>
+            <p class="font-normal text-lg text-zinc-50">{{ item.price }}€</p>
           </div>
-        </button>
-      }
-    </div>
-  }
+
+          <p class="font-normal text-base tracking-tighter text-zinc-50">{{ item.description }}</p>
+        </div>
+      </button>
+    }
+  </div>
+
 </div>

@@ -1,7 +1,10 @@
-<div class="h-20 py-4 px-8 flex items-center justify-between gap-4 bg-zinc-50">
+<div class="h-20 py-4 px-8 flex items-center justify-between gap-4">
   <img alt="logo" class="h-full" src="{{restaurantConfigStore.config()!.restaurant.logo}}"/>
   <div class="inline-flex gap-4">
-    <button (click)="stepService.reset()" hlmBtn size="xxl" variant="tertiary">abandonner la commande</button>
-    <button (click)="stepService.next()" hlmBtn size="xxl">payer</button>
+    <button (click)="stepService.reset()" animation="pushShine" hlmBtn size="xxl" variant="terminalTertiary">abandonner
+      la commande
+    </button>
+    <button (click)="stepService.next()" animation="pushShine" hlmBtn size="xxl" variant="terminalPrimary">payer
+    </button>
   </div>
 </div>

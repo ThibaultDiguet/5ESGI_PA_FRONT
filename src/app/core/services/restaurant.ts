@@ -1,8 +1,8 @@
-import { inject, Injectable } from '@angular/core';
-import { environment } from '../../environment/env';
-import { HttpClient } from '@angular/common/http';
-import { Category, Item } from '../types/restaurant';
-import { Observable, of, switchMap, throwError, timer } from 'rxjs';
+import {inject, Injectable} from '@angular/core';
+import {environment} from '../../environment/env';
+import {HttpClient} from '@angular/common/http';
+import {Category, Item} from '../types/restaurant';
+import {Observable, of, switchMap, throwError, timer} from 'rxjs';
 
 export interface MenuResponse {
   categories: Category[];
@@ -28,11 +28,11 @@ export class RestaurantService {
     return timer(1000).pipe(
       switchMap(() => {
         if (status === 'error') {
-          return throwError(() => ({ status: 500, message: 'Internal Server Error' }));
+          return throwError(() => ({status: 500, message: 'Internal Server Error'}));
         }
 
         if (status === 'empty') {
-          return of({ categories: [], items: [] });
+          return of({categories: [], items: []});
         }
 
         const mockData: MenuResponse = {
@@ -57,8 +57,14 @@ export class RestaurantService {
               description: '',
             },
             {
+              uuid: '9a2b3c4d-5e6f-4091-a2b3-c4d5e6f7a8b9',
+              name: 'alcool',
+              iconUrl: 'temp/alcool.svg',
+              description: '',
+            },
+            {
               uuid: 'c81f3e5a-9d2b-474c-812e-5a6b7c8d9e0f',
-              name: 'frites',
+              name: 'accompagnements',
               iconUrl: 'temp/fries.svg',
               description: 'Crispy and cut from golden potatoes',
             },
@@ -69,7 +75,7 @@ export class RestaurantService {
               description: '',
             },
             {
-              uuid: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
+              uuid: 'f47ac10b-58cc-4372-a567-0e02b2c3e479',
               name: 'glaces',
               iconUrl: 'temp/ice-cream.svg',
               description: 'Soft, premium ice cream, made in house daily with only the good stuff',
@@ -264,7 +270,7 @@ export class RestaurantService {
                 'Crispy chicken breast dusted with a hot pepper blend, topped with spicy slaw and pickles',
             },
             {
-              uuid: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
+              uuid: 'f47ac10b-58cc-4372-a567-0e02b2c3d478',
               imageUrl:
                 'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:733958b1-35c6-4d88-b926-9b6f4c800738',
               name: 'BBQ Chicken',
@@ -324,7 +330,7 @@ export class RestaurantService {
               nutritionalValues:
                 'Calories: 560\nFat (g): 31\nSaturated Fat (g): 4.5\nTrans Fats (g): 0\nCholesterol (mg): 15\nSodium (Na) (g): 740\nCarbohydrate (g): 64\nFibre (g): 7\nSugars (g): 1\nAdded Sugars (g): 1\nProtein (g): 6',
               price: 4,
-              categories: ['frites'],
+              categories: ['accompagnements'],
               description: 'Crispy crinkle cut fries',
             },
             {
@@ -336,8 +342,20 @@ export class RestaurantService {
               nutritionalValues:
                 'Calories: 690\nFat (g): 49\nSaturated Fat (g): 17\nTrans Fats (g): 0.5\nCholesterol (mg): 80\nSodium (Na) (g): 1030\nCarbohydrate (g): 56\nFibre (g): 5\nSugars (g): 3\nAdded Sugars (g): 0\nProtein (g): 13',
               price: 5.5,
-              categories: ['frites'],
+              categories: ['accompagnements'],
               description: 'Topped with cheese sauce',
+            },
+            {
+              uuid: '2e1c5a9d-355b-4d6e-8a7c-1b0d2e9f4a3c',
+              imageUrl:
+                'https://www.shakeshack.co.uk/wp-content/uploads/2025/12/Onion-Rings-Side-Sauce-Menu-Item-Card-1.jpg',
+              name: 'Onion Rings',
+              allergens: 'This product may contain Cereals containing Gluten',
+              nutritionalValues:
+                'Calories: 690\nFat (g): 49\nSaturated Fat (g): 17\nTrans Fats (g): 0.5\nCholesterol (mg): 80\nSodium (Na) (g): 1030\nCarbohydrate (g): 56\nFibre (g): 5\nSugars (g): 3\nAdded Sugars (g): 0\nProtein (g): 13',
+              price: 5.5,
+              categories: ['accompagnements'],
+              description: '6 Crispy beer-battered onion rings made from sliced sweet Spanish onions',
             },
             {
               uuid: '9a8b7c6d-5e4f-4d3c-b2a1-0f9e8d7c6b5a',
@@ -386,7 +404,7 @@ export class RestaurantService {
               price: 6,
               categories: ['glaces'],
               description:
-                'Vanilla Shack ice cream blended with blueberry cheesecake , topped with crumbled blueberry cheesecake',
+                'Vanilla Shack ice cream blended with blueberry cheesecake',
             },
             {
               uuid: '3d2c1b0a-9f8e-4d7c-8b6a-5e4d3c2b1a0f',
@@ -399,7 +417,7 @@ export class RestaurantService {
               price: 6,
               categories: ['glaces'],
               description:
-                'Vanilla Shack ice cream blended with strawberry cheesecake and strawberry puree, topped with whipped cream and crushed shortbread',
+                'Vanilla Shack ice cream blended with strawberry cheesecake',
             },
             {
               uuid: 'b1a2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d',
@@ -412,7 +430,7 @@ export class RestaurantService {
               price: 6,
               categories: ['glaces'],
               description:
-                'Vanilla Shack ice cream blended with red velvet cake, topped with whipped cream and crumbled red velvet cake',
+                'Vanilla Shack ice cream blended with red velvet cake',
             },
             {
               uuid: 'd9e8f7a6-b5c4-4d3e-8f2g-1h0i9j8k7l6m',
@@ -425,7 +443,7 @@ export class RestaurantService {
               price: 6,
               categories: ['glaces'],
               description:
-                'Vanilla Shack iced cream mixed with cookie crumbles, topped with whipped cream and cookie crumbles',
+                'Vanilla Shack iced cream mixed with cookie crumbles',
             },
             {
               uuid: 'f1e2d3c4-b5a6-4d7e-8f9g-0h1i2j3k4l5m',
@@ -450,7 +468,7 @@ export class RestaurantService {
               price: 5.5,
               categories: ['glaces'],
               description:
-                'House-made chocolate frozen custard hand spun with our vanilla Shack ice cream.',
+                'House-made chocolate frozen custard hand spun with our vanilla ice cream.',
             },
             {
               uuid: 'e1f2a3b4-c5d6-4a7b-8c9d-0e1f2a3b4c5d',
@@ -488,30 +506,6 @@ export class RestaurantService {
               price: 5.5,
               categories: ['glaces'],
               description: 'House-made vanilla Shack ice cream with strawberry puree',
-            },
-            {
-              uuid: '2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:6da3dd25-682d-4182-b86a-15d1514dba48',
-              name: 'Pepsi Float',
-              allergens: 'This product may contain Egg, Milk',
-              nutritionalValues:
-                'Calories: 160,\nFat (g): 0,\nSaturated Fat (g): 0,\nTrans Fats (g): 0,\nCholesterol (mg): 0,\nSodium (Na) (g): 5,\nCarbohydrate (g): 39,\nFibre (g): 0,\nSugars (g): 43,\nAdded Sugars (g): 0,\nProtein (g): 0,',
-              price: 5.5,
-              categories: ['glaces'],
-              description: '',
-            },
-            {
-              uuid: 'a7b8c9d0-e1f2-4a3b-8c4d-5e6f7a8b9c0d',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:4affe25a-d0fc-401e-9744-b20a49cec819',
-              name: 'Creamsicle Float',
-              allergens: 'This product may contain Egg, Milk',
-              nutritionalValues:
-                'Calories: 100,\nFat (g): 3,\nSaturated Fat (g): 2,\nTrans Fats (g): 0,\nCholesterol (mg): 20,\nSodium (Na) (g): 40,\nCarbohydrate (g): 17,\nFibre (g): 0,\nSugars (g): 16,\nAdded Sugars (g): 16,\nProtein (g): 1,',
-              price: 5.5,
-              categories: ['glaces'],
-              description: '',
             },
             {
               uuid: 'd1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a',
@@ -586,220 +580,37 @@ export class RestaurantService {
               description: 'Vanilla Shack ice cream, strawberry puree, cheesecake',
             },
             {
-              uuid: 'd4e5f6a7-b8c9-4d0e-8f1a-2b3c4d5e6f7a',
+              uuid: '0c1d2e3f-4a5b-4c6d-8e7f-8a9b0c1d2e3f',
               imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:4b751027-b25a-46d5-99b3-c81d47863d6c',
-              name: 'Regular',
+                'https://www.shakeshack.co.uk/wp-content/uploads/2025/06/Product_Drinks_Iced-Tea_2024_600x420px.webp',
+              name: 'Fresh Brewed Iced Tea',
               allergens: 'NA',
-              nutritionalValues:
-                'Calories: 180/290\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 3.3/5\nCarbohydrate (g): 44/72\nFibre (g): 0\nSugars (g): 44/72\nAdded Sugars (g): 44/72\nProtein (g): 0.2/0.3',
-              price: 4.5,
+              nutritionalValues: 'NA',
+              price: 2.5,
               categories: ['boissons'],
-              description: 'Made in house',
+              description: 'Made in house with real tea leaves and cane sugar',
             },
             {
-              uuid: 'a1b2c3d4-e5f6-4a7b-8c8d-9e0f1a2b3c4d',
+              uuid: '0c1d2e3f-4a5b-4c6d-8e7f-8a9b0c1d2e3f',
               imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:4b751027-b25a-46d5-99b3-c81d47863d6c',
-              name: 'Large',
+                'https://www.shakeshack.co.uk/wp-content/uploads/2025/06/Product_Drinks_Lemonade_2024_600x420px.webp',
+              name: 'Fresh Lemonade',
               allergens: 'NA',
-              nutritionalValues:
-                'Calories: 180/290\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 3.3/5\nCarbohydrate (g): 44/72\nFibre (g): 0\nSugars (g): 44/72\nAdded Sugars (g): 44/72\nProtein (g): 0.2/0.3',
-              price: 5,
+              nutritionalValues: 'NA',
+              price: 3,
               categories: ['boissons'],
-              description: 'Made in house',
+              description: 'Made in house with real cane sugar',
             },
             {
-              uuid: 'f9e8d7c6-b5a4-4d3e-8f2c-1b0a9f8e7d6c',
+              uuid: '0c1d2e3f-4a5b-4c6d-8e7f-8a9b0c1d2e3f',
               imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:195a1acd-7c57-4193-b61d-445939813fe9',
-              name: 'Regular',
+                'https://www.shakeshack.co.uk/wp-content/uploads/2025/06/Product_Drinks_FiftyFifty_2024_600x420px.jpg',
+              name: 'Fifty/Fifty',
               allergens: 'NA',
-              nutritionalValues:
-                'Calories: 190/300\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0/5\nCarbohydrate (g): 45/73\nFibre (g): 0/1\nSugars (g): 44/71\nAdded Sugars (g): 40/65\nProtein (g): 0/1',
-              price: 4.5,
+              nutritionalValues: 'NA',
+              price: 3,
               categories: ['boissons'],
-              description: 'House-made lemonade mixed with strawberry puree and mint leaves',
-            },
-            {
-              uuid: '0d1e2f3a-4b5c-4d6e-8f7a-8b9c0d1e2f3a',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:195a1acd-7c57-4193-b61d-445939813fe9',
-              name: 'Large',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 190/300\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0/5\nCarbohydrate (g): 45/73\nFibre (g): 0/1\nSugars (g): 44/71\nAdded Sugars (g): 40/65\nProtein (g): 0/1',
-              price: 5,
-              categories: ['boissons'],
-              description: 'House-made lemonade mixed with strawberry puree and mint leaves',
-            },
-            {
-              uuid: 'e8f9a0b1-c2d3-4a4b-8c5d-6e7f8a9b0c1d',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:63b64cc2-2da9-453e-860b-d4bd7fb12010',
-              name: 'Regular',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 90/140\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0\nCarbohydrate (g): 0\nFibre (g): 23/36\nSugars (g): 23/36\nAdded Sugars (g): 23/36\nProtein (g): 0',
-              price: 4,
-              categories: ['boissons'],
-              description: 'Half lemonade of your choice, half iced tea',
-            },
-            {
-              uuid: '7c8d9e0f-1a2b-4c3d-8e4f-5a6b7c8d9e0f',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:63b64cc2-2da9-453e-860b-d4bd7fb12010',
-              name: 'Large',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 90/140\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0\nCarbohydrate (g): 0\nFibre (g): 23/36\nSugars (g): 23/36\nAdded Sugars (g): 23/36\nProtein (g): 0',
-              price: 5,
-              categories: ['boissons'],
-              description: 'Half lemonade of your choice, half iced tea',
-            },
-            {
-              uuid: '2a3b4c5d-6e7f-4a8b-8c9d-0e1f2a3b4c5d',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:182c195e-ddf2-4de2-8e0c-106f04b446ad',
-              name: 'Regular',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 0\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 15/25\nCarbohydrate (g): 0\nFibre (g): 0\nSugars (g): 0\nAdded Sugars (g): 0\nProtein (g): 0',
-              price: 4,
-              categories: ['boissons'],
-              description: 'Brewed fresh daily',
-            },
-            {
-              uuid: 'd5e6f7a8-b9c0-4d1e-8f2a-3b4c5d6e7f8a',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:182c195e-ddf2-4de2-8e0c-106f04b446ad',
-              name: 'Large',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 0\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 15/25\nCarbohydrate (g): 0\nFibre (g): 0\nSugars (g): 0\nAdded Sugars (g): 0\nProtein (g): 0',
-              price: 5,
-              categories: ['boissons'],
-              description: 'Brewed fresh daily',
-            },
-            {
-              uuid: '9b0c1d2e-3f4a-4b5c-8d6e-7f8a9b0c1d2e',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
-              name: 'Regular',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 160/240\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 40/55\nCarbohydrate (g): 41/60\nFibre (g): 0\nSugars (g): 41/60\nAdded Sugars (g): 40/58\nProtein (g): 0',
-              price: 3.5,
-              categories: ['boissons'],
-              description: '16 oz',
-            },
-            {
-              uuid: '4f5a6b7c-8d9e-4f0a-8b1c-2d3e4f5a6b7c',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
-              name: 'Large',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 160/240\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 40/55\nCarbohydrate (g): 41/60\nFibre (g): 0\nSugars (g): 41/60\nAdded Sugars (g): 40/58\nProtein (g): 0',
-              price: 4,
-              categories: ['boissons'],
-              description: '24 oz',
-            },
-            {
-              uuid: 'c2d3e4f5-a6b7-4c8d-9e0f-1a2b3c4d5e6f',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
-              name: 'Regular',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 0/5\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 2.3/3.3\nCarbohydrate (g): 1/2\nFibre (g): 0\nSugars (g): 1/2\nAdded Sugars (g): 1/1\nProtein (g): 0',
-              price: 3.5,
-              categories: ['boissons'],
-              description: '16 oz',
-            },
-            {
-              uuid: '1b2c3d4e-5f6a-4b7c-8d8e-9f0a1b2c3d4e',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
-              name: 'Large',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 0/5\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 2.3/3.3\nCarbohydrate (g): 1/2\nFibre (g): 0\nSugars (g): 1/2\nAdded Sugars (g): 1/1\nProtein (g): 0',
-              price: 4,
-              categories: ['boissons'],
-              description: '24 oz',
-            },
-            {
-              uuid: '8e9f0a1b-2c3d-4e4f-8a5b-6c7d8e9f0a1b',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
-              name: 'Regular',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 140/210\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0.2/2.3\nCarbohydrate (g): 38/55\nFibre (g): 0\nSugars (g): 38/55\nAdded Sugars (g): 35/51\nProtein (g): 0',
-              price: 3.5,
-              categories: ['boissons'],
-              description: '16 oz',
-            },
-            {
-              uuid: '3a4b5c6d-7e8f-4a9b-8c0d-1e2f3a4b5c6d',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
-              name: 'Large',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 140/210\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0.2/2.3\nCarbohydrate (g): 38/55\nFibre (g): 0\nSugars (g): 38/55\nAdded Sugars (g): 35/51\nProtein (g): 0',
-              price: 4,
-              categories: ['boissons'],
-              description: '24 oz',
-            },
-            {
-              uuid: 'b6c7d8e9-f0a1-4b2c-8d3e-4f5a6b7c8d9e',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
-              name: 'Regular',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 140/210\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0.2/0.2\nCarbohydrate (g): 36/52\nFibre (g): 0\nSugars (g): 36/52\nAdded Sugars (g): 35/51\nProtein (g): 0',
-              price: 3.5,
-              categories: ['boissons'],
-              description: '16 oz',
-            },
-            {
-              uuid: 'd1e2f3a4-b5c6-4d7a-8f8b-9c0d1e2f3a4b',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
-              name: 'Large',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 140/210\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0.2/0.2\nCarbohydrate (g): 36/52\nFibre (g): 0\nSugars (g): 36/52\nAdded Sugars (g): 35/51\nProtein (g): 0',
-              price: 4,
-              categories: ['boissons'],
-              description: '24 oz',
-            },
-            {
-              uuid: 'a5b6c7d8-e9f0-4a1b-8c2d-3e4f5a6b7c8d',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
-              name: 'Regular',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 180/260\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 60/90\nCarbohydrate (g): 44/64\nFibre (g): 0\nSugars (g): 44/64\nAdded Sugars (g): 44/64\nProtein (g): 0',
-              price: 3.5,
-              categories: ['boissons'],
-              description: '16 oz',
-            },
-            {
-              uuid: 'f2a3b4c5-d6e7-4f8a-9b9c-0d1e2f3a4b5c',
-              imageUrl:
-                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
-              name: 'Large',
-              allergens: 'NA',
-              nutritionalValues:
-                'Calories: 180/260\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 60/90\nCarbohydrate (g): 44/64\nFibre (g): 0\nSugars (g): 44/64\nAdded Sugars (g): 44/64\nProtein (g): 0',
-              price: 4,
-              categories: ['boissons'],
-              description: '24 oz',
+              description: 'Half lemonade, half iced tea',
             },
             {
               uuid: '0c1d2e3f-4a5b-4c6d-8e7f-8a9b0c1d2e3f',
@@ -822,6 +633,83 @@ export class RestaurantService {
               price: 2,
               categories: ['boissons'],
               description: 'Highland spring water 500 ml',
+            },
+            {
+              uuid: 'a9f0a1b2-c3d4-4e5f-8a6b-7c8d9e0f1a2b',
+              imageUrl:
+                'https://www.shakeshack.co.uk/wp-content/uploads/2025/07/BEER_Website-menu-images-650-x-500-pixels_.webp',
+              name: 'ShackMeister™ Ale*',
+              allergens: 'Contains: cereals containing gluten',
+              nutritionalValues: 'NA',
+              price: 4,
+              categories: ['alcool'],
+              description: 'Brewed exclusively for Shake Shack (5.0% abv)',
+            },
+            {
+              uuid: 'a1f0a1b2-c3d4-4e5f-8a6b-7c8d9e0f1a2b',
+              imageUrl:
+                'https://www.shakeshack.co.uk/wp-content/uploads/2025/07/Brooklyn-Pilsner-Menu-Image.webp',
+              name: 'Brooklyn Pilsner',
+              allergens: 'Contains: cereals containing gluten',
+              nutritionalValues: 'NA',
+              price: 4,
+              categories: ['alcool'],
+              description: 'Brewed exclusively for Shake Shack (4.8% abv)',
+            },
+            {
+              uuid: 'b2f0a1b2-c3d4-4e5f-8a6b-7c8d9e0f1a2b',
+              imageUrl:
+                'https://www.shakeshack.co.uk/wp-content/uploads/2025/07/Estrella-Galicia-650x500-1.jpg',
+              name: 'Estrella Galicia',
+              allergens: 'NA',
+              nutritionalValues: 'NA',
+              price: 6,
+              categories: ['alcool'],
+              description: 'This crisp, refreshing lager goes great with our crisp crinkle cut fries.',
+            },
+            {
+              uuid: 'c5f0a1b2-c3d4-4e5f-8a6b-7c8d9e0f1a2b',
+              imageUrl:
+                'https://www.shakeshack.co.uk/wp-content/uploads/2025/07/Red-Wine-Menu-Image.webp',
+              name: 'Shack Red',
+              allergens: 'NA',
+              nutritionalValues: 'NA',
+              price: 6,
+              categories: ['alcool'],
+              description: 'Pinot Noir, Paul Buisse, Amboise, France',
+            },
+            {
+              uuid: 'c5f0a1b2-c3d4-4e5f-8a6b-7c8d9e1f1a8f',
+              imageUrl:
+                'https://www.shakeshack.co.uk/wp-content/uploads/2025/07/White-Wine-Menu-Images.webp',
+              name: 'Shack White',
+              allergens: 'NA',
+              nutritionalValues: 'NA',
+              price: 6,
+              categories: ['alcool'],
+              description: 'Sauvignon Blanc, Paul Buisse, Amboise, France',
+            },
+            {
+              uuid: 'd4f0a1b2-73d4-4e5f-8a6b-7c8d9e0f1a2b',
+              imageUrl:
+                'https://www.shakeshack.co.uk/wp-content/uploads/2025/07/Poochini-Retail-Menu-2024.webp',
+              name: 'Pooch-ini™',
+              allergens: 'Includes dairy and sugar products. Not intended for small dogs',
+              nutritionalValues: 'NA',
+              price: 2,
+              categories: ['friandises'],
+              description: 'Red velvet dog biscuits and vanilla custard',
+            },
+            {
+              uuid: 'a680a1b2-c3d4-4e5f-8a6b-7c8d9e0f1a2b',
+              imageUrl:
+                'https://www.shakeshack.co.uk/wp-content/uploads/2025/07/Bag-O-Bones-Menu-Images.webp',
+              name: 'Bag O’ Bones',
+              allergens: 'NA',
+              nutritionalValues: 'NA',
+              price: 2,
+              categories: ['friandises'],
+              description: 'Doggie bag of 5 red velvet dog biscuits by Outsider Tart',
             },
           ],
         };
