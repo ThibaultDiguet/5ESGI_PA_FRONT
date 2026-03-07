@@ -236,6 +236,593 @@ export class RestaurantService {
               categories: ['burgers'],
               description: 'American cheese melted in a grilled potato bun',
             },
+            {
+              uuid: '9b2e4f1a-6d3c-4b2a-8f5e-1d9c7a4b2f5d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:017e8a17-c8b0-4a53-820e-4390a96026e0',
+              name: 'Chicken Shack™',
+              allergens:
+                'This product may contain Gluten, Eggs, Soybeans, Milk, Celery, Mustard, Sesame',
+              nutritionalValues:
+                'Calories: 550\nFat (g): 29\nSaturated Fat (g): 6\nTrans Fats (g): 0\nCholesterol (mg): 50\nSodium (Na) (g): 1560\nCarbohydrate (g): 41\nFibre (g): 0\nSugars (g): 11\nAdded Sugars (g): 11\nProtein (g): 39',
+              price: 7,
+              categories: ['poulet'],
+              description: 'Crispy chicken breast, lettuce, pickles, herb mayo',
+            },
+            {
+              uuid: 'a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:80f4e203-1fcf-4174-adef-cc566978b5e1',
+              name: 'Hot Chicken',
+              allergens:
+                'This product may contain Gluten, Egg, Soybeans, Milk, Sulphites, Celery, Mustard, Sesame',
+              nutritionalValues:
+                'Calories: 570\nFat (g): 27\nSaturated Fat (g): 13\nTrans Fats (g): 0\nCholesterol (mg): 30\nSodium (Na) (g): 1410\nCarbohydrate (g): 51\nFibre (g): 3\nSugars (g): 8\nAdded Sugars (g): 1\nProtein (g): 30',
+              price: 7,
+              categories: ['poulet'],
+              description:
+                'Crispy chicken breast dusted with a hot pepper blend, topped with spicy slaw and pickles',
+            },
+            {
+              uuid: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:733958b1-35c6-4d88-b926-9b6f4c800738',
+              name: 'BBQ Chicken',
+              allergens:
+                'This product may contain Gluten, Crustacean, Fish, Soybeans, Milk, Celery, Mustard, Sesame',
+              nutritionalValues:
+                'Calories: 560\nFat (g): 20\nSaturated Fat (g): 11\nTrans Fats (g): 0\nCholesterol (mg): 85\nSodium (Na) (g): 1360\nCarbohydrate (g): 41\nFibre (g): 4\nSugars (g): 19\nAdded Sugars (g): 6\nProtein (g): 38',
+              price: 8.5,
+              categories: ['poulet'],
+              description: 'Crispy chicken breast with Shack BBQ sauce, cheese, pickles and onion',
+            },
+            {
+              uuid: '550e8400-e29b-41d4-a716-446655440000',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:c7f1b45b-c910-4b2f-b585-9db801b4f6bc',
+              name: 'Chicken Bites 4-count',
+              allergens: 'This product may contain Gluten, Soybeans, Sulphites, Mustard',
+              nutritionalValues:
+                'Calories: 150\nFat (g): 2\nSaturated Fat (g): 0.5\nTrans Fats (g): 0\nCholesterol (mg): 50\nSodium (Na) (g): 850\nCarbohydrate (g): 17\nFibre (g): 1\nSugars (g): 2\nAdded Sugars (g): 0\nProtein (g): 19',
+              price: 3,
+              categories: ['poulet'],
+              description:
+                'Crispy, whole white meat bites served with honey mustard, BBQ, ranch or buffalo sauce',
+            },
+            {
+              uuid: '67c6116d-cf99-47c5-a294-14d19df7702d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:95951d1c-e980-4bde-9c8d-ede6d8929c5a',
+              name: 'Chicken Bites 6-count',
+              allergens: 'This product may contain Gluten, Soybeans, Sulphites, Mustard',
+              nutritionalValues:
+                'Calories: 230\nFat (g): 3\nSaturated Fat (g): 1\nTrans Fats (g): 0\nCholesterol (mg): 75\nSodium (Na) (g): 1270\nCarbohydrate (g): 25\nFibre (g): 2\nSugars (g): 2\nAdded Sugars (g): 0\nProtein (g): 28',
+              price: 4,
+              categories: ['poulet'],
+              description:
+                'Crispy, whole white meat bites served with honey mustard, BBQ, ranch or buffalo sauce',
+            },
+            {
+              uuid: '4f2e6392-1e9d-4c3a-93f4-528c1926f8d1',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:32fdb3c5-02d8-49bd-8bc6-6dd424c4456c',
+              name: 'Chicken Bites 10-count',
+              allergens: 'This product may contain Gluten, Soybeans, Sulphites, Mustard',
+              nutritionalValues:
+                'Calories: 390\nFat (g): 5\nSaturated Fat (g): 1.5\nTrans Fats (g): 0\nCholesterol (mg): 125\nSodium (Na) (g): 2120\nCarbohydrate (g): 41\nFibre (g): 3\nSugars (g): 4\nAdded Sugars (g): 0\nProtein (g): 47',
+              price: 5.5,
+              categories: ['poulet'],
+              description:
+                'Crispy, whole white meat bites served with honey mustard, BBQ, ranch or buffalo sauce',
+            },
+            {
+              uuid: 'd827f1c4-9a3b-4e5d-8f2c-1b6a0e9d7c4b',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:d94c8cd4-ca21-4179-b897-999bb6f38b24',
+              name: 'Fries',
+              allergens: 'This product may contain Soybeans',
+              nutritionalValues:
+                'Calories: 560\nFat (g): 31\nSaturated Fat (g): 4.5\nTrans Fats (g): 0\nCholesterol (mg): 15\nSodium (Na) (g): 740\nCarbohydrate (g): 64\nFibre (g): 7\nSugars (g): 1\nAdded Sugars (g): 1\nProtein (g): 6',
+              price: 4,
+              categories: ['frites'],
+              description: 'Crispy crinkle cut fries',
+            },
+            {
+              uuid: '2e1c5a9d-3f4b-4d6e-8a7c-1b0d2e9f4a3c',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:a1870150-2a43-4186-bfd3-e8a26feac622',
+              name: 'Cheese Fries',
+              allergens: 'This product may contain Soybeans, Milk',
+              nutritionalValues:
+                'Calories: 690\nFat (g): 49\nSaturated Fat (g): 17\nTrans Fats (g): 0.5\nCholesterol (mg): 80\nSodium (Na) (g): 1030\nCarbohydrate (g): 56\nFibre (g): 5\nSugars (g): 3\nAdded Sugars (g): 0\nProtein (g): 13',
+              price: 5.5,
+              categories: ['frites'],
+              description: 'Topped with cheese sauce',
+            },
+            {
+              uuid: '9a8b7c6d-5e4f-4d3c-b2a1-0f9e8d7c6b5a',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:2139aa47-3d58-4f99-aa3b-05f0ba1e8e21',
+              name: 'Hot Dog',
+              allergens: 'This product may contain Gluten, Milk, Sesame',
+              nutritionalValues:
+                'Calories: 290\nFat (g): 9\nSaturated Fat (g): 2.5\nTrans Fats (g): 0\nCholesterol (mg): 60\nSodium (Na) (g): 190\nCarbohydrate (g): 32\nFibre (g): 2\nSugars (g): 6\nAdded Sugars (g): 6\nProtein (g): 19',
+              price: 3.5,
+              categories: ['hot dogs'],
+              description: '100% beef hot dog',
+            },
+            {
+              uuid: 'c4a5b6d7-e8f9-4a1b-8c2d-3e4f5a6b7c8d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:33f24abc-a85a-4607-b3f3-afeefeac8277',
+              name: 'Cheese Dog',
+              allergens: 'This product may contain Gluten, Milk, Sesame',
+              nutritionalValues:
+                'Calories: 450\nFat (g): 20\nSaturated Fat (g): 7\nTrans Fats (g): 0\nCholesterol (mg): 120\nSodium (Na) (g): 8120\nCarbohydrate (g): 44\nFibre (g): 2\nSugars (g): 8\nAdded Sugars (g): 0\nProtein (g): 23',
+              price: 4,
+              categories: ['hot dogs'],
+              description: '100% beef hot dog topped with cheese sauce',
+            },
+            {
+              uuid: '1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:036bb062-8891-4402-abdd-4339f458ce31',
+              name: 'ShackMeister Dog',
+              allergens: 'This product may contain Gluten, Soybeans, Milk, Celery, Sesame',
+              nutritionalValues:
+                'Calories: 410\nFat (g): 26\nSaturated Fat (g): 16\nTrans Fats (g): 0.5\nCholesterol (mg): 50\nSodium (Na) (g): 770\nCarbohydrate (g): 29\nFibre (g): 5\nSugars (g): 3\nAdded Sugars (g): 0\nProtein (g): 21',
+              price: 7,
+              categories: ['hot dogs'],
+              description: '100% beef hot dog topped with cheese sauce and crispy shallots',
+            },
+            {
+              uuid: '8f7e6d5c-4b3a-4d2e-8f1c-0b9a8d7e6c5b',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:623d52d9-0d44-48f0-80e6-f4ed97c5fa72',
+              name: 'Blueberry Shake',
+              allergens: 'This product may contain Gluten, Egg, Milk',
+              nutritionalValues:
+                'Calories: 780\nFat (g): 21\nSaturated Fat (g): 11\nTrans Fats (g): 0\nCholesterol (mg): 55\nSodium (Na) (g): 500\nCarbohydrate (g): 144\nFibre (g): 1\nSugars (g): 47\nAdded Sugars (g): 37\nProtein (g): 3',
+              price: 6,
+              categories: ['glaces'],
+              description:
+                'Vanilla Shack ice cream blended with blueberry cheesecake , topped with crumbled blueberry cheesecake',
+            },
+            {
+              uuid: '3d2c1b0a-9f8e-4d7c-8b6a-5e4d3c2b1a0f',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:c9981328-0dae-4e24-ab38-d399889bfed6',
+              name: 'Strawberry Cheesecake Shake',
+              allergens: 'This product may contain Gluten, Egg, Milk',
+              nutritionalValues:
+                'Calories: 1410\nFat (g): 28\nSaturated Fat (g): 17\nTrans Fats (g): 1\nCholesterol (mg): 70\nSodium (Na) (g): 840\nCarbohydrate (g): 287\nFibre (g): 2\nSugars (g): 97\nAdded Sugars (g): 82\nProtein (g): 5',
+              price: 6,
+              categories: ['glaces'],
+              description:
+                'Vanilla Shack ice cream blended with strawberry cheesecake and strawberry puree, topped with whipped cream and crushed shortbread',
+            },
+            {
+              uuid: 'b1a2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:9bfbc965-15d7-4748-bf30-3a6e31449474',
+              name: 'Red Velvet Shake',
+              allergens: 'This product may contain Gluten, Egg, Milk',
+              nutritionalValues:
+                'Calories: 1190\nFat (g): 11\nSaturated Fat (g): 5\nTrans Fats (g): 0\nCholesterol (mg): 35\nSodium (Na) (g): 930\nCarbohydrate (g): 268\nFibre (g): 0\nSugars (g): 89\nAdded Sugars (g): 75\nProtein (g): 5',
+              price: 6,
+              categories: ['glaces'],
+              description:
+                'Vanilla Shack ice cream blended with red velvet cake, topped with whipped cream and crumbled red velvet cake',
+            },
+            {
+              uuid: 'd9e8f7a6-b5c4-4d3e-8f2g-1h0i9j8k7l6m',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:6c7c432e-ae09-4bbb-89cb-4771a2880b50',
+              name: 'Cookies & Cream Shake',
+              allergens: 'This product may contain Gluten, Egg, Soybeans, Milk',
+              nutritionalValues:
+                'Calories: 290\nFat (g): 19\nSaturated Fat (g): 10\nTrans Fats (g): 0\nCholesterol (mg): 35\nSodium (Na) (g): 170\nCarbohydrate (g): 31\nFibre (g): 1\nSugars (g): 17\nAdded Sugars (g): 16\nProtein (g): 2',
+              price: 6,
+              categories: ['glaces'],
+              description:
+                'Vanilla Shack iced cream mixed with cookie crumbles, topped with whipped cream and cookie crumbles',
+            },
+            {
+              uuid: 'f1e2d3c4-b5a6-4d7e-8f9g-0h1i2j3k4l5m',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:a933f057-e396-4748-89cb-7b11e4ebbf2b',
+              name: 'Vanilla Shake',
+              allergens: 'This product may contain Egg, Milk',
+              nutritionalValues:
+                'Calories: 770\nFat (g): 3.5\nSaturated Fat (g): 2.5\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 530\nCarbohydrate (g): 180\nFibre (g): 0\nSugars (g): 6\nAdded Sugars (g): 6\nProtein (g): 4',
+              price: 5.5,
+              categories: ['glaces'],
+              description: 'House-made vanilla Shack ice cream',
+            },
+            {
+              uuid: '0a1b2c3d-4e5f-4a6b-8c7d-8e9f0a1b2c3d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:bbd7170c-f63d-4d7b-bc80-f39b3e61d2e6',
+              name: 'Vanilla & Chocolate',
+              allergens: 'This product may contain Egg, Milk',
+              nutritionalValues:
+                'Calories:\nFat (g):\nSaturated Fat (g):\nTrans Fats (g):\nCholesterol (mg):\nSodium (Na) (g):\nCarbohydrate (g):\nFibre (g):\nSugars (g):\nAdded Sugars (g):\nProtein (g):',
+              price: 5.5,
+              categories: ['glaces'],
+              description:
+                'House-made chocolate frozen custard hand spun with our vanilla Shack ice cream.',
+            },
+            {
+              uuid: 'e1f2a3b4-c5d6-4a7b-8c9d-0e1f2a3b4c5d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:27647af2-bd5e-40ae-9dbe-93a3e53b3df7',
+              name: 'Chocolate Shake',
+              allergens: 'This product may contain Egg, Milk',
+              nutritionalValues:
+                'Calories: 550,\nFat (g): 11,\nSaturated Fat (g): 4,\nTrans Fats (g): 0,\nCholesterol (mg): 15,\nSodium (Na) (g): 350,\nCarbohydrate (g): 110,\nFibre (g): 0,\nSugars (g): 71,\nAdded Sugars (g): 71,\nProtein (g): 4,',
+              price: 5.5,
+              categories: ['glaces'],
+              description: 'House-made chocolate Shack ice cream',
+            },
+            {
+              uuid: '7d6c5b4a-3e2f-4d1c-8b0a-9f8e7d6c5b4a',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:8a2c562c-1cb3-41fb-81c3-7f8ea39950a3',
+              name: 'Black & White Shake',
+              allergens: 'This product may contain Egg, Soybeans, Milk',
+              nutritionalValues:
+                'Calories: 880,\nFat (g): 11,\nSaturated Fat (g): 7,\nTrans Fats (g): 0,\nCholesterol (mg): 10,\nSodium (Na) (g): 560,\nCarbohydrate (g): 189,\nFibre (g): 1,\nSugars (g): 11,\nAdded Sugars (g): 11,\nProtein (g): 4,',
+              price: 5.5,
+              categories: ['glaces'],
+              description:
+                'Chocolate fudge sauce hand spun with our house-made vanilla Shack ice cream',
+            },
+            {
+              uuid: '5a4b3c2d-1e0f-4a9b-8c7d-6e5f4a3b2c1d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:a4f4c6c3-3f58-4c5e-b8e3-f7e59b7e23f9',
+              name: 'Strawberry Shake',
+              allergens: 'This product may contain Egg, Milk',
+              nutritionalValues:
+                'Calories: 780,\nFat (g): 3.5,\nSaturated Fat (g): 2,\nTrans Fats (g): 0,\nCholesterol (mg): 10,\nSodium (Na) (g): 520,\nCarbohydrate (g): 184,\nFibre (g): 0,\nSugars (g): 8,\nAdded Sugars (g): 6,\nProtein (g): 3,',
+              price: 5.5,
+              categories: ['glaces'],
+              description: 'House-made vanilla Shack ice cream with strawberry puree',
+            },
+            {
+              uuid: '2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:6da3dd25-682d-4182-b86a-15d1514dba48',
+              name: 'Pepsi Float',
+              allergens: 'This product may contain Egg, Milk',
+              nutritionalValues:
+                'Calories: 160,\nFat (g): 0,\nSaturated Fat (g): 0,\nTrans Fats (g): 0,\nCholesterol (mg): 0,\nSodium (Na) (g): 5,\nCarbohydrate (g): 39,\nFibre (g): 0,\nSugars (g): 43,\nAdded Sugars (g): 0,\nProtein (g): 0,',
+              price: 5.5,
+              categories: ['glaces'],
+              description: '',
+            },
+            {
+              uuid: 'a7b8c9d0-e1f2-4a3b-8c4d-5e6f7a8b9c0d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:4affe25a-d0fc-401e-9744-b20a49cec819',
+              name: 'Creamsicle Float',
+              allergens: 'This product may contain Egg, Milk',
+              nutritionalValues:
+                'Calories: 100,\nFat (g): 3,\nSaturated Fat (g): 2,\nTrans Fats (g): 0,\nCholesterol (mg): 20,\nSodium (Na) (g): 40,\nCarbohydrate (g): 17,\nFibre (g): 0,\nSugars (g): 16,\nAdded Sugars (g): 16,\nProtein (g): 1,',
+              price: 5.5,
+              categories: ['glaces'],
+              description: '',
+            },
+            {
+              uuid: 'd1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:a56ec340-b233-44f7-8931-c18744284971',
+              name: 'Blueberry Concrete - Single',
+              allergens: 'This product may contain Gluten, Egg, Milk',
+              nutritionalValues:
+                'Calories: 740,\nFat (g): 15,\nSaturated Fat (g): 5,\nTrans Fats (g): 0,\nCholesterol (mg): 45,\nSodium (Na) (g): 690,\nCarbohydrate (g): 149,\nFibre (g): 1,\nSugars (g): 53,\nAdded Sugars (g): 37,\nProtein (g): 2,',
+              price: 3.5,
+              categories: ['glaces'],
+              description: 'Vanilla Shack ice cream, blueberry cheese cake',
+            },
+            {
+              uuid: '9f8e7d6c-5b4a-4d3c-8b2a-1e0f9d8c7b6a',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:a56ec340-b233-44f7-8931-c18744284971',
+              name: 'Blueberry Concrete - Double',
+              allergens: 'This product may contain Gluten, Egg, Milk',
+              nutritionalValues:
+                'Calories: 1480,\nFat (g): 30,\nSaturated Fat (g): 11,\nTrans Fats (g): 0,\nCholesterol (mg): 90,\nSodium (Na) (g): 1380,\nCarbohydrate (g): 298,\nFibre (g): 1,\nSugars (g): 106,\nAdded Sugars (g): 75,\nProtein (g): 5,',
+              price: 4,
+              categories: ['glaces'],
+              description: 'Vanilla Shack ice cream, blueberry cheese cake',
+            },
+            {
+              uuid: '4a3b2c1d-0e9f-4a8b-8c7d-6e5f4a3b2c1d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:de7f7183-7647-4ca2-bf5f-963e497d1313',
+              name: 'Red Velvet Concrete - Single',
+              allergens: 'This product may contain Gluten, Egg, Milk',
+              nutritionalValues:
+                'Calories: 740,\nFat (g): 15,\nSaturated Fat (g): 5,\nTrans Fats (g): 0,\nCholesterol (mg): 45,\nSodium (Na) (g): 690,\nCarbohydrate (g): 149,\nFibre (g): 1,\nSugars (g): 53,\nAdded Sugars (g): 37,\nProtein (g): 2,',
+              price: 3.5,
+              categories: ['glaces'],
+              description: 'Vanilla Shack ice cream, red velvet cake',
+            },
+            {
+              uuid: 'c5d6e7f8-a9b0-4c1d-8e2f-3a4b5c6d7e8f',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:de7f7183-7647-4ca2-bf5f-963e497d1313',
+              name: 'Red Velvet Concrete - Double',
+              allergens: 'This product may contain Gluten, Egg, Milk',
+              nutritionalValues:
+                'Calories: 1480,\nFat (g): 30,\nSaturated Fat (g): 11,\nTrans Fats (g): 0,\nCholesterol (mg): 90,\nSodium (Na) (g): 1380,\nCarbohydrate (g): 298,\nFibre (g): 1,\nSugars (g): 106,\nAdded Sugars (g): 75,\nProtein (g): 5,',
+              price: 4,
+              categories: ['glaces'],
+              description: 'Vanilla Shack ice cream, red velvet cake',
+            },
+            {
+              uuid: '1e2f3a4b-5c6d-4a7e-8f9b-0c1d2e3f4a5b',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:87c4de2d-bfef-4147-88ce-07dcc24b95ed',
+              name: 'Strawberry Cheesecake Concrete - Single',
+              allergens: 'This product may contain Gluten, Egg, Milk',
+              nutritionalValues:
+                'Calories: 640,\nFat (g): 7,\nSaturated Fat (g): 4.5,\nTrans Fats (g): 0,\nCholesterol (mg): 25,\nSodium (Na) (g): 400,\nCarbohydrate (g): 142,\nFibre (g): 0,\nSugars (g): 8,\nAdded Sugars (g): 6,\nProtein (g): 2,',
+              price: 3.5,
+              categories: ['glaces'],
+              description: 'Vanilla Shack ice cream, strawberry puree, cheesecake',
+            },
+            {
+              uuid: '8a9b0c1d-2e3f-4a4b-8c5d-6e7f8a9b0c1d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:87c4de2d-bfef-4147-88ce-07dcc24b95ed',
+              name: 'Strawberry Cheesecake Concrete - Double',
+              allergens: 'This product may contain Gluten, Egg, Milk',
+              nutritionalValues:
+                'Calories: 1280,\nFat (g): 14,\nSaturated Fat (g): 9,\nTrans Fats (g): 0,\nCholesterol (mg): 0,\nSodium (Na) (g): 800,\nCarbohydrate (g): 284,\nFibre (g): 1,\nSugars (g): 16,\nAdded Sugars (g): 16,\nProtein (g): 4,',
+              price: 4,
+              categories: ['glaces'],
+              description: 'Vanilla Shack ice cream, strawberry puree, cheesecake',
+            },
+            {
+              uuid: 'd4e5f6a7-b8c9-4d0e-8f1a-2b3c4d5e6f7a',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:4b751027-b25a-46d5-99b3-c81d47863d6c',
+              name: 'Regular',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 180/290\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 3.3/5\nCarbohydrate (g): 44/72\nFibre (g): 0\nSugars (g): 44/72\nAdded Sugars (g): 44/72\nProtein (g): 0.2/0.3',
+              price: 4.5,
+              categories: ['boissons'],
+              description: 'Made in house',
+            },
+            {
+              uuid: 'a1b2c3d4-e5f6-4a7b-8c8d-9e0f1a2b3c4d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:4b751027-b25a-46d5-99b3-c81d47863d6c',
+              name: 'Large',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 180/290\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 3.3/5\nCarbohydrate (g): 44/72\nFibre (g): 0\nSugars (g): 44/72\nAdded Sugars (g): 44/72\nProtein (g): 0.2/0.3',
+              price: 5,
+              categories: ['boissons'],
+              description: 'Made in house',
+            },
+            {
+              uuid: 'f9e8d7c6-b5a4-4d3e-8f2c-1b0a9f8e7d6c',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:195a1acd-7c57-4193-b61d-445939813fe9',
+              name: 'Regular',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 190/300\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0/5\nCarbohydrate (g): 45/73\nFibre (g): 0/1\nSugars (g): 44/71\nAdded Sugars (g): 40/65\nProtein (g): 0/1',
+              price: 4.5,
+              categories: ['boissons'],
+              description: 'House-made lemonade mixed with strawberry puree and mint leaves',
+            },
+            {
+              uuid: '0d1e2f3a-4b5c-4d6e-8f7a-8b9c0d1e2f3a',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:195a1acd-7c57-4193-b61d-445939813fe9',
+              name: 'Large',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 190/300\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0/5\nCarbohydrate (g): 45/73\nFibre (g): 0/1\nSugars (g): 44/71\nAdded Sugars (g): 40/65\nProtein (g): 0/1',
+              price: 5,
+              categories: ['boissons'],
+              description: 'House-made lemonade mixed with strawberry puree and mint leaves',
+            },
+            {
+              uuid: 'e8f9a0b1-c2d3-4a4b-8c5d-6e7f8a9b0c1d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:63b64cc2-2da9-453e-860b-d4bd7fb12010',
+              name: 'Regular',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 90/140\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0\nCarbohydrate (g): 0\nFibre (g): 23/36\nSugars (g): 23/36\nAdded Sugars (g): 23/36\nProtein (g): 0',
+              price: 4,
+              categories: ['boissons'],
+              description: 'Half lemonade of your choice, half iced tea',
+            },
+            {
+              uuid: '7c8d9e0f-1a2b-4c3d-8e4f-5a6b7c8d9e0f',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:63b64cc2-2da9-453e-860b-d4bd7fb12010',
+              name: 'Large',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 90/140\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0\nCarbohydrate (g): 0\nFibre (g): 23/36\nSugars (g): 23/36\nAdded Sugars (g): 23/36\nProtein (g): 0',
+              price: 5,
+              categories: ['boissons'],
+              description: 'Half lemonade of your choice, half iced tea',
+            },
+            {
+              uuid: '2a3b4c5d-6e7f-4a8b-8c9d-0e1f2a3b4c5d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:182c195e-ddf2-4de2-8e0c-106f04b446ad',
+              name: 'Regular',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 0\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 15/25\nCarbohydrate (g): 0\nFibre (g): 0\nSugars (g): 0\nAdded Sugars (g): 0\nProtein (g): 0',
+              price: 4,
+              categories: ['boissons'],
+              description: 'Brewed fresh daily',
+            },
+            {
+              uuid: 'd5e6f7a8-b9c0-4d1e-8f2a-3b4c5d6e7f8a',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:182c195e-ddf2-4de2-8e0c-106f04b446ad',
+              name: 'Large',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 0\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 15/25\nCarbohydrate (g): 0\nFibre (g): 0\nSugars (g): 0\nAdded Sugars (g): 0\nProtein (g): 0',
+              price: 5,
+              categories: ['boissons'],
+              description: 'Brewed fresh daily',
+            },
+            {
+              uuid: '9b0c1d2e-3f4a-4b5c-8d6e-7f8a9b0c1d2e',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
+              name: 'Regular',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 160/240\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 40/55\nCarbohydrate (g): 41/60\nFibre (g): 0\nSugars (g): 41/60\nAdded Sugars (g): 40/58\nProtein (g): 0',
+              price: 3.5,
+              categories: ['boissons'],
+              description: '16 oz',
+            },
+            {
+              uuid: '4f5a6b7c-8d9e-4f0a-8b1c-2d3e4f5a6b7c',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
+              name: 'Large',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 160/240\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 40/55\nCarbohydrate (g): 41/60\nFibre (g): 0\nSugars (g): 41/60\nAdded Sugars (g): 40/58\nProtein (g): 0',
+              price: 4,
+              categories: ['boissons'],
+              description: '24 oz',
+            },
+            {
+              uuid: 'c2d3e4f5-a6b7-4c8d-9e0f-1a2b3c4d5e6f',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
+              name: 'Regular',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 0/5\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 2.3/3.3\nCarbohydrate (g): 1/2\nFibre (g): 0\nSugars (g): 1/2\nAdded Sugars (g): 1/1\nProtein (g): 0',
+              price: 3.5,
+              categories: ['boissons'],
+              description: '16 oz',
+            },
+            {
+              uuid: '1b2c3d4e-5f6a-4b7c-8d8e-9f0a1b2c3d4e',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
+              name: 'Large',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 0/5\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 2.3/3.3\nCarbohydrate (g): 1/2\nFibre (g): 0\nSugars (g): 1/2\nAdded Sugars (g): 1/1\nProtein (g): 0',
+              price: 4,
+              categories: ['boissons'],
+              description: '24 oz',
+            },
+            {
+              uuid: '8e9f0a1b-2c3d-4e4f-8a5b-6c7d8e9f0a1b',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
+              name: 'Regular',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 140/210\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0.2/2.3\nCarbohydrate (g): 38/55\nFibre (g): 0\nSugars (g): 38/55\nAdded Sugars (g): 35/51\nProtein (g): 0',
+              price: 3.5,
+              categories: ['boissons'],
+              description: '16 oz',
+            },
+            {
+              uuid: '3a4b5c6d-7e8f-4a9b-8c0d-1e2f3a4b5c6d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
+              name: 'Large',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 140/210\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0.2/2.3\nCarbohydrate (g): 38/55\nFibre (g): 0\nSugars (g): 38/55\nAdded Sugars (g): 35/51\nProtein (g): 0',
+              price: 4,
+              categories: ['boissons'],
+              description: '24 oz',
+            },
+            {
+              uuid: 'b6c7d8e9-f0a1-4b2c-8d3e-4f5a6b7c8d9e',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
+              name: 'Regular',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 140/210\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0.2/0.2\nCarbohydrate (g): 36/52\nFibre (g): 0\nSugars (g): 36/52\nAdded Sugars (g): 35/51\nProtein (g): 0',
+              price: 3.5,
+              categories: ['boissons'],
+              description: '16 oz',
+            },
+            {
+              uuid: 'd1e2f3a4-b5c6-4d7a-8f8b-9c0d1e2f3a4b',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
+              name: 'Large',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 140/210\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 0.2/0.2\nCarbohydrate (g): 36/52\nFibre (g): 0\nSugars (g): 36/52\nAdded Sugars (g): 35/51\nProtein (g): 0',
+              price: 4,
+              categories: ['boissons'],
+              description: '24 oz',
+            },
+            {
+              uuid: 'a5b6c7d8-e9f0-4a1b-8c2d-3e4f5a6b7c8d',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
+              name: 'Regular',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 180/260\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 60/90\nCarbohydrate (g): 44/64\nFibre (g): 0\nSugars (g): 44/64\nAdded Sugars (g): 44/64\nProtein (g): 0',
+              price: 3.5,
+              categories: ['boissons'],
+              description: '16 oz',
+            },
+            {
+              uuid: 'f2a3b4c5-d6e7-4f8a-9b9c-0d1e2f3a4b5c',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:67b30b31-6b6b-41ba-95f4-ec73d1bd2545',
+              name: 'Large',
+              allergens: 'NA',
+              nutritionalValues:
+                'Calories: 180/260\nFat (g): 0\nSaturated Fat (g): 0\nTrans Fats (g): 0\nCholesterol (mg): 0\nSodium (Na) (g): 60/90\nCarbohydrate (g): 44/64\nFibre (g): 0\nSugars (g): 44/64\nAdded Sugars (g): 44/64\nProtein (g): 0',
+              price: 4,
+              categories: ['boissons'],
+              description: '24 oz',
+            },
+            {
+              uuid: '0c1d2e3f-4a5b-4c6d-8e7f-8a9b0c1d2e3f',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:b9005c90-8590-4881-8c48-3b97fd5a2a20',
+              name: 'Still Water',
+              allergens: 'NA',
+              nutritionalValues: 'NA',
+              price: 2,
+              categories: ['boissons'],
+              description: 'Highland spring water 500 ml',
+            },
+            {
+              uuid: 'e9f0a1b2-c3d4-4e5f-8a6b-7c8d9e0f1a2b',
+              imageUrl:
+                'https://delivery-p129961-e1274544.adobeaemcloud.com/adobe/assets/urn:aaid:aem:9f9d8449-b45b-41cd-b090-5ae326509b15',
+              name: 'Sparkling Water',
+              allergens: 'NA',
+              nutritionalValues: 'NA',
+              price: 2,
+              categories: ['boissons'],
+              description: 'Highland spring water 500 ml',
+            },
           ],
         };
 
