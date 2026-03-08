@@ -30,7 +30,7 @@
           class="flex flex-col justify-end absolute bottom-0 left-0 w-full h-3/5 bg-gradient-to-t from-zinc-800/70 via-zinc-800/50 to-transparent z-1 p-4">
           <div class="flex flex-row gap-4 items-end">
             <h2 class="text-shadow-md font-extrabold text-xl text-zinc-50">{{ item.name }}</h2>
-            <p class="font-normal text-lg text-zinc-50">{{ item.price }}€</p>
+            <p class="font-normal text-lg text-zinc-50">{{ item.price | currency:'EUR' }}</p>
           </div>
 
           <p class="font-normal text-base tracking-tighter text-zinc-50">{{ item.description }}</p>

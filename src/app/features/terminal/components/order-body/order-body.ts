@@ -5,11 +5,12 @@ import {HlmButtonImports} from '../../../../shared/components/ui/ui-button-helm/
 import {NG_ICON_DIRECTIVES, provideIcons} from '@ng-icons/core';
 import {HlmIconImports} from '../../../../shared/components/ui/ui-icon-helm/src';
 import {lucideChevronLeft, lucideChevronRight} from '@ng-icons/lucide';
+import {CurrencyPipe} from '@angular/common';
 
 @Component({
   selector: 'app-order-body',
   templateUrl: './order-body.html',
-  imports: [HlmButtonImports, HlmIconImports, NG_ICON_DIRECTIVES],
+  imports: [HlmButtonImports, HlmIconImports, NG_ICON_DIRECTIVES, CurrencyPipe],
   providers: [provideIcons({lucideChevronRight, lucideChevronLeft})],
 })
 export class OrderBody {
