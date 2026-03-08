@@ -33,8 +33,6 @@ export class TerminalOrderStore {
     this.serviceMode.set(mode);
   }
 
-  // --- Computed (Calculs automatiques) ---
-
   setCustomer(customer: Customer | null) {
     this.customer.set(customer);
   }

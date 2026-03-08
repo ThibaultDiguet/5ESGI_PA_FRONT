@@ -1,10 +1,14 @@
 <div class="flex flex-col gap-4 p-8 h-full overflow-hidden bg-white">
-  <h1 class="text-2xl font-bold text-zinc-900">mon panier ({{ terminalOrderStore.totalItems() }})</h1>
-
+  <div class="h-12 flex items-center justify-between gap-4">
+    <h1 class="text-2xl font-bold text-zinc-900">
+      mon panier ({{ terminalOrderStore.totalItems() }} article{{ terminalOrderStore.totalItems() > 1 ? 's' : '' }})
+    </h1>
+    <img alt="logo" class="h-full" src="{{restaurantConfigStore.config()!.restaurant.logo}}"/>
+  </div>
   <div class="flex-1 flex flex-col gap-4 overflow-x-scroll scrollbar-hide">
 
     @for (line of terminalOrderStore.basket(); track line.product.uuid) {
-      <div class="flex items-center justify-between p-4 rounded bg-zinc-50 shadow-sm">
+      <div class="flex items-center justify-between p-4 rounded bg-zinc-50 shadow-sm animate-slide-in-top">
         <div class="flex items-center gap-4">
           <img [src]="line.product.imageUrl" class="size-24 object-cover rounded"/>
           <div class="flex flex-col justify-between">
@@ -21,7 +25,7 @@
       </div>
     } @empty {
       <div class="text-center py-12 border-2 border-dashed rounded text-zinc-400">
-        Le panier est vide.
+        le panier est vide.
       </div>
     }
 
