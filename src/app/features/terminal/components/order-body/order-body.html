@@ -19,10 +19,10 @@
     </button>
   }
 
-
   <div class="grid grid-cols-3 auto-rows-[calc(50%-0.5rem)] gap-4 h-full">
     @for (item of paginatedItems(); track item.uuid + item.name) {
-      <button class="relative overflow-hidden rounded-2xl h-full text-left animate-slide-up-fade">
+      <button (click)="openDetail(item)"
+              class="relative overflow-hidden rounded-2xl h-full text-left animate-slide-up-fade">
         <img [src]="item.imageUrl"
              alt="image {{item.name}}"
              class="w-full h-full object-cover"/>
@@ -38,5 +38,24 @@
       </button>
     }
   </div>
+
+  <hlm-sheet (closed)="isSheetOpened.set(false)" [state]="isSheetOpened() ? 'open' : 'closed'" side="bottom">
+    <hlm-sheet-content *brnSheetContent="let side" class="w-full h-screen [&_[brnSheetClose]]:hidden">
+
+      @if (selectedItem(); as item) {
+        <div class="flex-1 overflow-hidden">
+          <app-order-item-details [item]="item"/>
+        </div>
+      }
+      <hlm-sheet-footer>
+        <button animation="pushShine" hlmBtn size="xxl" variant="terminalPrimary">
+          ajouter au panier
+        </button>
+        <button (click)="isSheetOpened.set(false)" animation="pushShine" hlmBtn size="xxl" variant="terminalTertiary">
+          retour au menu
+        </button>
+      </hlm-sheet-footer>
+    </hlm-sheet-content>
+  </hlm-sheet>
 
 </div>

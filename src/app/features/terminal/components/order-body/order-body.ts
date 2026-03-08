@@ -6,11 +6,15 @@ import {NG_ICON_DIRECTIVES, provideIcons} from '@ng-icons/core';
 import {HlmIconImports} from '../../../../shared/components/ui/ui-icon-helm/src';
 import {lucideChevronLeft, lucideChevronRight} from '@ng-icons/lucide';
 import {CurrencyPipe} from '@angular/common';
+import {Item} from '../../../../core/types/restaurant';
+import {HlmSheetImports} from '../../../../shared/components/ui/ui-sheet-helm/src';
+import {OrderItemDetail} from '../order-item-detail/order-item-detail';
+import {BrnSheetContent} from '@spartan-ng/brain/sheet';
 
 @Component({
   selector: 'app-order-body',
   templateUrl: './order-body.html',
-  imports: [HlmButtonImports, HlmIconImports, NG_ICON_DIRECTIVES, CurrencyPipe],
+  imports: [HlmButtonImports, HlmIconImports, NG_ICON_DIRECTIVES, CurrencyPipe, HlmSheetImports, OrderItemDetail, BrnSheetContent],
   providers: [provideIcons({lucideChevronRight, lucideChevronLeft})],
 })
 export class OrderBody {
@@ -23,6 +27,8 @@ export class OrderBody {
     const end = start + 6;
     return this.terminalConfigStore.filteredItems().slice(start, end);
   });
+  selectedItem = signal<Item | null>(null);
+  isSheetOpened = signal(false);
 
   constructor() {
     this.terminalConfigStore = inject(TerminalConfigStore);
@@ -51,5 +57,10 @@ export class OrderBody {
     } else {
       this.actualPage.set(totalPages);
     }
+  }
+
+  openDetail(item: Item) {
+    this.selectedItem.set(item);
+    this.isSheetOpened.set(true);
   }
 }
