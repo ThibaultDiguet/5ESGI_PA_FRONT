@@ -27,6 +27,7 @@ export const buttonVariants = cva(
         category:
           'bg-transparent text-zinc-600 hover:text-primary active:text-primary aspect-square flex-col !p-0',
         terminalPrimary: 'bg-linear-to-r from-primary via-primary/90 to-primary bg-[length:200%_100%] transition-colors duration-250 text-primary-foreground shadow-xs rounded-full font-semibold border-1',
+        terminalSecondary: 'bg-linear-to-r from-zinc-600 via-zinc-600/90 to-zinc-600 bg-[length:200%_100%] transition-colors duration-250 text-zinc-50 shadow-xs rounded-full font-semibold border-1',
         terminalTertiary: 'bg-linear-to-r from-tertiary via-tertiary/90 to-tertiary bg-[length:200%_100%] border border-tertiary rounded-full text-tertiary-foreground transition-colors duration-250'
       },
       size: {
@@ -35,7 +36,7 @@ export const buttonVariants = cva(
         lg: 'h-10 rounded-lg px-6 has-[>ng-icon]:px-4',
         xl: 'h-12 rounded-xl px-8 has-[>ng-icon]:px-6',
         xxl: 'h-14 rounded-2xl px-10 has-[>ng-icon]:px-8',
-        icon: 'size-9',
+        icon: 'size-14',
         rectangle: 'h-16 w-full',
       },
       animation: {

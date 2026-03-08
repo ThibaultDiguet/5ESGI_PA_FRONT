@@ -25,7 +25,7 @@ export class RestaurantService {
   }
 
   getMenuByUuid(uuid: string, status: string): Observable<MenuResponse> {
-    return timer(1000).pipe(
+    return timer(300).pipe(
       switchMap(() => {
         if (status === 'error') {
           return throwError(() => ({status: 500, message: 'Internal Server Error'}));

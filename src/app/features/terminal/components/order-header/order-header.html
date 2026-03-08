@@ -4,7 +4,18 @@
     <button (click)="stepService.reset()" animation="pushShine" hlmBtn size="xxl" variant="terminalTertiary">abandonner
       la commande
     </button>
-    <button (click)="stepService.next()" animation="pushShine" hlmBtn size="xxl" variant="terminalPrimary">payer
-    </button>
+    <div class="relative">
+      <button (click)="stepService.next()" animation="pushShine" hlmBtn size="icon" variant="terminalSecondary">
+        <app-icon-basket size="26px"/>
+      </button>
+
+      @if (terminalOrderStore.totalItems() > 0) {
+        <div
+          class="absolute -top-1 -left-4 rounded-full bg-primary font-medium text-zinc-50 text-md size-8 flex items-center justify-center">
+          {{ terminalOrderStore.totalItems() }}
+        </div>
+      }
+
+    </div>
   </div>
 </div>

@@ -48,9 +48,13 @@
         </div>
       }
       <hlm-sheet-footer>
-        <button animation="pushShine" hlmBtn size="xxl" variant="terminalPrimary">
-          ajouter au panier
-        </button>
+        @if (selectedItem(); as item) {
+
+          <button (click)="addToBasket(item)" animation="pushShine" hlmBtn size="xxl"
+                  variant="terminalPrimary">
+            ajouter au panier
+          </button>
+        }
         <button (click)="isSheetOpened.set(false)" animation="pushShine" hlmBtn size="xxl" variant="terminalTertiary">
           retour au menu
         </button>

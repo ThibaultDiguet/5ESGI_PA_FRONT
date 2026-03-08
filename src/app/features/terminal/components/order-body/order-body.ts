@@ -10,6 +10,7 @@ import {Item} from '../../../../core/types/restaurant';
 import {HlmSheetImports} from '../../../../shared/components/ui/ui-sheet-helm/src';
 import {OrderItemDetail} from '../order-item-detail/order-item-detail';
 import {BrnSheetContent} from '@spartan-ng/brain/sheet';
+import {TerminalOrderStore} from '../../../../core/stores/terminalOrderStore';
 
 @Component({
   selector: 'app-order-body',
@@ -19,6 +20,7 @@ import {BrnSheetContent} from '@spartan-ng/brain/sheet';
 })
 export class OrderBody {
   public terminalConfigStore: TerminalConfigStore;
+  public terminalOrderStore = inject(TerminalOrderStore);
 
   public actualPage = signal<number>(1);
 
@@ -32,6 +34,7 @@ export class OrderBody {
 
   constructor() {
     this.terminalConfigStore = inject(TerminalConfigStore);
+    this.terminalOrderStore = inject(TerminalOrderStore);
 
     effect(() => {
       this.terminalConfigStore.selectedCategory();
@@ -62,5 +65,10 @@ export class OrderBody {
   openDetail(item: Item) {
     this.selectedItem.set(item);
     this.isSheetOpened.set(true);
+  }
+
+  protected addToBasket(item: Item) {
+    this.terminalOrderStore.addToBasket(item);
+    this.isSheetOpened.set(false);
   }
 }
