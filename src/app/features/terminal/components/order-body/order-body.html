@@ -44,7 +44,7 @@
 
       @if (selectedItem(); as item) {
         <div class="flex-1 overflow-hidden">
-          <app-order-item-details [item]="item"/>
+          <app-order-item-details (quantityChanged)="currentQuantity.set($event)" [item]="item"/>
         </div>
       }
       <hlm-sheet-footer>

@@ -1,13 +1,19 @@
-import {Component, input} from '@angular/core';
+import {Component, input, output} from '@angular/core';
 import {CurrencyPipe} from '@angular/common';
 import {Item} from '../../../../core/types/restaurant';
+import {QuantitySelector} from '../quantity-selector/quantity-selector';
 
 @Component({
   selector: 'app-order-item-details',
   standalone: true,
-  imports: [CurrencyPipe,],
+  imports: [CurrencyPipe, QuantitySelector,],
   templateUrl: './order-item-detail.html'
 })
 export class OrderItemDetail {
   item = input.required<Item>();
+  quantityChanged = output<number>();
+
+  protected onQuantityChange(value: number) {
+    this.quantityChanged.emit(value);
+  }
 }

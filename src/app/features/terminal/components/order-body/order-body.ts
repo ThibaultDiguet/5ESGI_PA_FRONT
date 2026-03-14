@@ -1,4 +1,4 @@
-import {Component, computed, effect, inject, signal} from '@angular/core';
+import {Component, computed, effect, inject, signal, ViewChild} from '@angular/core';
 import {TerminalConfigStore} from '../../../../core/stores/terminalConfigStore';
 import {HlmButtonImports} from '../../../../shared/components/ui/ui-button-helm/src';
 
@@ -19,8 +19,11 @@ import {TerminalOrderStore} from '../../../../core/stores/terminalOrderStore';
   providers: [provideIcons({lucideChevronRight, lucideChevronLeft})],
 })
 export class OrderBody {
+  @ViewChild(OrderItemDetail) itemDetailComponent?: OrderItemDetail;
+
   public terminalConfigStore: TerminalConfigStore;
   public terminalOrderStore = inject(TerminalOrderStore);
+  public currentQuantity = signal<number>(1);
 
   public actualPage = signal<number>(1);
 
@@ -63,12 +66,14 @@ export class OrderBody {
   }
 
   openDetail(item: Item) {
+    this.currentQuantity.set(1);
     this.selectedItem.set(item);
     this.isSheetOpened.set(true);
   }
 
   protected addToBasket(item: Item) {
-    this.terminalOrderStore.addToBasket(item);
+    const quantity = this.currentQuantity();
+    this.terminalOrderStore.addToBasket(item, quantity);
     this.isSheetOpened.set(false);
   }
 }
