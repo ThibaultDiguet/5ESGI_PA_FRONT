@@ -1,9 +1,9 @@
 <div class="h-20 py-4 px-8 flex items-center justify-between gap-4">
   <img alt="logo" class="h-full" src="{{restaurantConfigStore.config()!.restaurant.logo}}"/>
   <div class="inline-flex gap-4">
-    <!--    <button (click)="stepService.reset()" animation="pushShine" hlmBtn size="xxl" variant="terminalTertiary">abandonner-->
-    <!--      la commande-->
-    <!--    </button>-->
+    <button (click)="stepService.reset()" animation="pushShine" hlmBtn size="xxl" variant="terminalTertiary">abandonner
+      la commande
+    </button>
     <div class="relative">
       <button (click)="stepService.next()" animation="pushShine" hlmBtn size="icon" variant="terminalPrimary">
         <app-icon-basket size="26px"/>
@@ -15,7 +15,6 @@
           {{ terminalOrderStore.totalItems() }}
         </div>
       }
-
     </div>
   </div>
 </div>

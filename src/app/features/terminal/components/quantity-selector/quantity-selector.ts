@@ -1,4 +1,4 @@
-import {Component, input, output, signal} from '@angular/core';
+import {Component, input, OnInit, output, signal} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {NgIconComponent, provideIcons} from '@ng-icons/core';
 import {lucideMinus, lucidePlus} from '@ng-icons/lucide';
@@ -18,13 +18,17 @@ import {HlmButtonImports} from '../../../../shared/components/ui/ui-button-helm/
   `]
 })
 
-export class QuantitySelector {
+export class QuantitySelector implements OnInit {
   initialValue = input<number>(1);
   min = input<number>(1);
   max = input<number>(99);
-  value = signal<number>(this.initialValue());
+  value = signal<number>(1);
 
   valueChanged = output<number>();
+
+  ngOnInit() {
+    this.value.set(this.initialValue());
+  }
 
   increment() {
     this.value.update(v => {
