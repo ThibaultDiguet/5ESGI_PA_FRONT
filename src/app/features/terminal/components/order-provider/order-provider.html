@@ -1,8 +1,3 @@
-<!--<div class="flex gap-4 flex-row absolute top-0 right-0 w-fit p-4">-->
-<!--  <button (click)="this.stepService.back()" hlmBtn type="button">Prédédent</button>-->
-<!--  <button (click)="this.stepService.next()" hlmBtn type="button">Suivant</button>-->
-<!--</div>-->
-
 @switch (this.stepService.get()) {
   @case (Steps.WELCOME) {
     <app-order-welcome/>
@@ -26,6 +21,6 @@
     <app-order-checkout/>
   }
   @case (Steps.CONFIRMATION) {
-    <app-order-confirmation/>
+    <app-order-payement/>
   }
 }

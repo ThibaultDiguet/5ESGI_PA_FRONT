@@ -6,17 +6,17 @@
     class="h-16 w-full text-center md:text-2xl text-2xl"
     hlmInput
     readonly
-    type="password"
+    type="{{ hideDigits() ? 'password' : 'text' }}"
   />
 
   <div class="grid grid-cols-3 gap-3 w-full">
 
     @for (digit of digits; track digit) {
       <button
+        (click)="addDigit(digit)"
         hlmBtn
-        variant="input"
         size="rectangle"
-        (click)="addDigit(digit)">
+        variant="input">
         {{ digit }}
       </button>
     }

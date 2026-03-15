@@ -1,10 +1,10 @@
-import { Component, inject, input, OnInit, signal } from '@angular/core';
-import { TerminalOrderStore } from '../../../../core/stores/terminalOrderStore';
-import { LoadingState } from '../../../../shared/components/primitives/loading-state/loading-state';
-import { CustomerService } from '../../../../core/services/order/customer';
-import { RestaurantConfigStore } from '../../../../core/stores/restaurantConfigStore';
-import { HlmButtonImports } from '../../../../shared/components/ui/ui-button-helm/src';
-import { TerminalSteps } from '../../../../core/services/order/terminalSteps';
+import {Component, inject, input, OnInit, signal} from '@angular/core';
+import {TerminalOrderStore} from '../../../../core/stores/terminalOrderStore';
+import {LoadingState} from '../../../../shared/components/primitives/loading-state/loading-state';
+import {CustomerService} from '../../../../core/services/order/customer';
+import {RestaurantConfigStore} from '../../../../core/stores/restaurantConfigStore';
+import {HlmButtonImports} from '../../../../shared/components/ui/ui-button-helm/src';
+import {TerminalSteps} from '../../../../core/services/order/terminalSteps';
 
 @Component({
   selector: 'app-order-authentification-login',
@@ -16,7 +16,7 @@ export class OrderAuthentificationLogin implements OnInit {
 
   public terminalOrderStore: TerminalOrderStore;
   public customerService: CustomerService;
-  public stepSerice: TerminalSteps;
+  public stepService: TerminalSteps;
 
   public restaurantConfigStore: RestaurantConfigStore;
 
@@ -27,7 +27,7 @@ export class OrderAuthentificationLogin implements OnInit {
     this.terminalOrderStore = inject(TerminalOrderStore);
     this.customerService = inject(CustomerService);
     this.restaurantConfigStore = inject(RestaurantConfigStore);
-    this.stepSerice = inject(TerminalSteps);
+    this.stepService = inject(TerminalSteps);
   }
 
   ngOnInit() {
@@ -53,6 +53,6 @@ export class OrderAuthentificationLogin implements OnInit {
 
   validateAuthentification() {
     this.terminalOrderStore.setIsLogged(true);
-    this.stepSerice.next();
+    this.stepService.next();
   }
 }

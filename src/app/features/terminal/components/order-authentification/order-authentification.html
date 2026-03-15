@@ -7,7 +7,7 @@
     </div>
     <div class="flex flex-row gap-16 w-full">
       <button
-        (click)="terminalOrderStore.stepService.setAuthentificationMethodToScan()"
+        (click)="stepService.setAuthentificationMethodToScan()"
         class="animate-slide-in-top [animation-delay:0.05s] bg-zinc-100 flex-1 aspect-square flex flex-col items-center justify-center rounded-xl shadow-xl">
         <app-icon-qr-scan class="text-primary" size="104px"/>
         <div class="flex flex-col gap-2 p-4">
@@ -18,7 +18,7 @@
       </button>
 
       <button
-        (click)="terminalOrderStore.stepService.setAuthentificationMethodToCode()"
+        (click)="stepService.setAuthentificationMethodToCode()"
         class="animate-slide-in-top [animation-delay:0.125s] bg-primary flex-1 aspect-square flex flex-col items-center justify-center rounded-xl shadow-xl"
       >
         <app-icon-code-entry class="text-zinc-50" size="104px"/>
@@ -30,7 +30,7 @@
       </button>
     </div>
     <div class="flex flex-col gap-2">
-      <button (click)="terminalOrderStore.stepService.next()"
+      <button (click)="stepService.next()"
               animation="pushShine"
               hlmBtn
               size="xxl"
@@ -38,7 +38,7 @@
       >
         continuer sans compte
       </button>
-      <button (click)="terminalOrderStore.stepService.reset()" animation="pushShine" hlmBtn size="xxl"
+      <button (click)="stepService.reset()" animation="pushShine" hlmBtn size="xxl"
               variant="terminalTertiary">
         abandonner la commande
       </button>

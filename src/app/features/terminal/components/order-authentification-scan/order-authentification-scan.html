@@ -17,11 +17,11 @@
     </div>
 
     <div class="flex flex-col gap-2">
-      <button (click)="terminalOrderStore.stepService.setAuthentificationMethodToCode()" animation="pushShine" hlmBtn
+      <button (click)="stepService.setAuthentificationMethodToCode()" animation="pushShine" hlmBtn
               size="xxl" variant="terminalPrimary">
         saisir mon code manuellement
       </button>
-      <button (click)="terminalOrderStore.stepService.next()" animation="pushShine" hlmBtn size="xxl"
+      <button (click)="stepService.next()" animation="pushShine" hlmBtn size="xxl"
               variant="terminalTertiary">
         continuer sans compte
       </button>

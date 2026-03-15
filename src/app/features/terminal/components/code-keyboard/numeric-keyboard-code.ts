@@ -1,8 +1,8 @@
-import { Component, input, output, signal } from '@angular/core';
-import { HlmInputImports } from '../../../../shared/components/ui/ui-input-helm/src';
-import { HlmButtonImports } from '../../../../shared/components/ui/ui-button-helm/src';
-import { IconClose } from '../../../../shared/components/icons/icon-close';
-import { IconBackspace } from '../../../../shared/components/icons/icon-backspace';
+import {Component, input, output, signal} from '@angular/core';
+import {HlmInputImports} from '../../../../shared/components/ui/ui-input-helm/src';
+import {HlmButtonImports} from '../../../../shared/components/ui/ui-button-helm/src';
+import {IconClose} from '../../../../shared/components/icons/icon-close';
+import {IconBackspace} from '../../../../shared/components/icons/icon-backspace';
 
 @Component({
   selector: 'app-numeric-keyboard-code',
@@ -14,11 +14,10 @@ export class NumericKeyboardCode {
   id = input<string>('code');
   placeholder = input<string>('------');
   maxDigits = input<number>(6);
+  hideDigits = input<boolean>(true);
 
-  // Événement pour envoyer la valeur au parent
   valueChange = output<string>();
 
-  // État interne réactif
   protected code = signal<string>('');
 
   protected readonly digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];

@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
-import { HlmButton } from '../../../../shared/components/ui/ui-button-helm/src';
-import { TerminalOrderStore } from '../../../../core/stores/terminalOrderStore';
-import { FormsModule } from '@angular/forms';
-import { NumericKeyboardCode } from '../code-keyboard/numeric-keyboard-code';
-import { OrderAuthentificationLogin } from '../order-authentification-login/order-authentification-login';
+import {Component, inject} from '@angular/core';
+import {HlmButton} from '../../../../shared/components/ui/ui-button-helm/src';
+import {TerminalOrderStore} from '../../../../core/stores/terminalOrderStore';
+import {FormsModule} from '@angular/forms';
+import {NumericKeyboardCode} from '../code-keyboard/numeric-keyboard-code';
+import {OrderAuthentificationLogin} from '../order-authentification-login/order-authentification-login';
+import {TerminalSteps} from '../../../../core/services/order/terminalSteps';
 
 @Component({
   selector: 'app-order-authentification-code',
@@ -12,11 +13,15 @@ import { OrderAuthentificationLogin } from '../order-authentification-login/orde
 })
 export class OrderAuthentificationCode {
   public terminalOrderStore: TerminalOrderStore;
+  public stepService: TerminalSteps;
+
   public loyaltyCode: string;
   public readonly loyaltyCodeDigits = 8;
 
   constructor() {
     this.terminalOrderStore = inject(TerminalOrderStore);
+    this.stepService = inject(TerminalSteps);
+
     this.loyaltyCode = '';
   }
 

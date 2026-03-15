@@ -1,5 +1,4 @@
-import {computed, inject, Injectable, signal} from '@angular/core';
-import {TerminalSteps} from '../services/order/terminalSteps';
+import {computed, Injectable, signal} from '@angular/core';
 import {Customer} from '../../shared/types/client';
 import {ServiceMode} from '../types/terminal';
 import {Item} from '../types/restaurant';
@@ -18,8 +17,9 @@ export class TerminalOrderStore {
 
   isLogged = signal<boolean>(false);
   basket = signal<OrderLine[]>([]);
+  easelCode = signal<string | null>(null);
 
-  stepService = inject(TerminalSteps);
+  orderNumber = signal<string | null>(null);
 
   readonly totalPrice = computed(() =>
     this.basket().reduce((total, line) => total + (line.product.price * line.amount), 0)
@@ -82,7 +82,10 @@ export class TerminalOrderStore {
 
   resetOrder() {
     this.customer.set(null);
+    this.isLogged.set(false);
     this.serviceMode.set(ServiceMode.DINE_IN);
     this.basket.set([]);
+    this.easelCode.set(null)
+    this.orderNumber.set(null);
   }
 }
