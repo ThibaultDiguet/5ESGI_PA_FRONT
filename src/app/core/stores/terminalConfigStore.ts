@@ -1,5 +1,5 @@
-import { computed, Injectable, signal } from '@angular/core';
-import { Category, Item } from '../types/restaurant';
+import {computed, Injectable, signal} from '@angular/core';
+import {Category, Item} from '../types/restaurant';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,9 @@ export class TerminalConfigStore {
 
     if (!selectedName) return [];
 
-    return allItems.filter((item) => item.categories?.includes(selectedName));
+    const filtered = allItems.filter((item) => item.categories?.includes(selectedName));
+
+    return [...filtered].sort((a, b) => a.name.localeCompare(b.name));
   });
 
   clear() {
