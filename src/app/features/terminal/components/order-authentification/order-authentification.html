@@ -8,7 +8,7 @@
     <div class="flex flex-row gap-16 w-full">
       <button
         (click)="stepService.setAuthentificationMethodToScan()"
-        class="animate-slide-in-top [animation-delay:0.05s] bg-zinc-100 flex-1 aspect-square flex flex-col items-center justify-center rounded-xl shadow-xl">
+        class="animate-slide-in-top [animation-delay:0.05s] bg-zinc-100 flex-1 aspect-square flex flex-col items-center justify-center rounded-xl shadow-lg">
         <app-icon-qr-scan class="text-primary" size="104px"/>
         <div class="flex flex-col gap-2 p-4">
           <h1 class="text-center text-zinc-900 font-semibold text-xl">scanner ma carte</h1>
@@ -29,6 +29,26 @@
         </div>
       </button>
     </div>
+
+    <div
+      class="w-full animate-slide-in-top [animation-delay:0.10s] bg-zinc-100 flex flex-row items-center p-4 gap-6 rounded-xl shadow-lg">
+      <div class="shadow-inner flex-shrink-0">
+        <qrcode
+          [colorDark]="'#18181b'"
+          [colorLight]="'#ffffff'"
+          [errorCorrectionLevel]="'M'"
+          [margin]="0"
+          [qrdata]="registrationUrl()"
+          [width]="80"/>
+      </div>
+
+      <div class="flex flex-col text-left">
+        <p class="text-lg font-semibold text-zinc-900 leading-tight">pas encore de compte ?</p>
+        <p class="text-sm text-zinc-600 font-normal">scannez ce QR code pour en créer un instantanément.</p>
+      </div>
+
+    </div>
+
     <div class="flex flex-col gap-2">
       <button (click)="stepService.next()"
               animation="pushShine"

@@ -1,8 +1,8 @@
-<div class="w-full h-full flex justify-center items-center">
+<div class="w-full h-full flex justify-center items-center bg-zinc-50">
   @if (isPending) {
     <app-loading-state message="inscription en cours..."/>
   } @else if (success()) {
-    <div class="bg-zinc-50 w-full p-8 rounded-lg sm:w-[450px] sm:border border-input animate-slide-in-top">
+    <div class="bg-zinc-50 w-full p-8 rounded-lg sm:w-[450px] sm:border border-input animate-slide-in-top shadow-lg">
       <div class="flex justify-center mb-4">
         <img [src]="restaurantConfig.config()?.restaurant?.logo" alt="restaurant logo" class="h-8">
       </div>
@@ -14,7 +14,7 @@
       </div>
     </div>
   } @else {
-    <div class="bg-zinc-50 w-full p-8 rounded-lg sm:w-[450px] sm:border border-input animate-slide-in-top">
+    <div class="bg-white w-full p-8 rounded-lg sm:w-[450px] sm:border border-input animate-slide-in-top">
       <div class="flex justify-center mb-4">
         <img [src]="restaurantConfig.config()?.restaurant?.logo" alt="restaurant logo" class="h-8">
       </div>
