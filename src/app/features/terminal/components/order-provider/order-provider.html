@@ -1,0 +1,26 @@
+@switch (this.stepService.get()) {
+  @case (Steps.WELCOME) {
+    <app-order-welcome/>
+  }
+  @case (Steps.SERVICE_MODE) {
+    <app-order-service-mode/>
+  }
+  @case (Steps.AUTHENTICATION) {
+    <app-order-authentification/>
+  }
+  @case (Steps.AUTHENTICATION_SCAN) {
+    <app-order-authentification-scan/>
+  }
+  @case (Steps.AUTHENTICATION_CODE) {
+    <app-order-authentification-code/>
+  }
+  @case (Steps.MENU) {
+    <app-order-menu-layout/>
+  }
+  @case (Steps.CHECKOUT) {
+    <app-order-checkout/>
+  }
+  @case (Steps.CONFIRMATION) {
+    <app-order-payement/>
+  }
+}

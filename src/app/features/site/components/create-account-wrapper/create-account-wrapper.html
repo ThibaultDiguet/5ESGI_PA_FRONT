@@ -1,0 +1,45 @@
+<div class="w-full h-full flex justify-center items-center bg-zinc-50">
+  @if (isPending) {
+    <app-loading-state message="inscription en cours..."/>
+  } @else if (success()) {
+    <div class="bg-zinc-50 w-full p-8 rounded-lg sm:w-[450px] sm:border border-input animate-slide-in-top shadow-lg">
+      <div class="flex justify-center mb-4">
+        <img [src]="restaurantConfig.config()?.restaurant?.logo" alt="restaurant logo" class="h-8">
+      </div>
+      <div class="flex flex-col gap-2 mb-6">
+        <h1 class="text-xl sm:text-2xl text-zinc-900 font-bold">compte créé avec succès</h1>
+        <p class="text-zinc-600 text-sm">vous allez prochainement recevoir un
+          email avec votre carte de fidélité.
+        </p>
+      </div>
+    </div>
+  } @else {
+    <div class="bg-white w-full p-8 rounded-lg sm:w-[450px] sm:border border-input animate-slide-in-top">
+      <div class="flex justify-center mb-4">
+        <img [src]="restaurantConfig.config()?.restaurant?.logo" alt="restaurant logo" class="h-8">
+      </div>
+
+      <div class="flex flex-col gap-2 mb-6 ">
+        <h1 class="text-xl sm:text-2xl text-zinc-900 font-bold">créer un compte chez
+          {{ restaurantConfig.config()?.restaurant?.name }}</h1>
+        <p
+          class="text-zinc-600 text-sm">
+          entrez vos informations pour vous créer un compte et recevoir votre carte de fidélité.
+        </p>
+      </div>
+      <form (ngSubmit)="onSubmit()" [formGroup]="form" class="flex flex-col gap-4" novalidate>
+        <app-create-account-form [form]="form"/>
+
+        @if (error()) {
+          <hlm-error>
+            une erreur est survenue lors de la création de votre compte. veuillez réessayer.
+          </hlm-error>
+        }
+        <button [disabled]="isPending" class="w-full" hlmBtn type="submit">
+          créer mon compte
+        </button>
+      </form>
+
+    </div>
+  }
+</div>

@@ -1,0 +1,8 @@
+@if (isFetchingConfig) {
+  <div class="w-full h-full flex items-center justify-center">
+    <app-loading-state/>
+  </div>
+} @else {
+  <app-navbar/>
+  <router-outlet/>
+}

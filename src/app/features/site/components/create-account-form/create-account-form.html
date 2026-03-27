@@ -1,0 +1,37 @@
+<div [formGroup]="form()" class="flex flex-col gap-4 w-full">
+
+  <div class="flex flex-col gap-1">
+    <hlm-form-field>
+      <input [formControl]="name" hlmInput id="name" placeholder="prénom"/>
+    </hlm-form-field>
+    @if (isNameTouched && name.invalid) {
+      @if (name.errors?.['required']) {
+        <hlm-error>
+          le prénom est requis.
+        </hlm-error>
+      } @else if (name.errors?.['name']) {
+        <hlm-error>
+          le prénom est invalide.
+        </hlm-error>
+      }
+    }
+  </div>
+  <div class="flex flex-col gap-1">
+    <hlm-form-field>
+      <input [formControl]="email" hlmInput id="email" placeholder="adresse email"/>
+    </hlm-form-field>
+
+    @if (isEmailTouched && email.invalid) {
+      @if (email.errors?.['required']) {
+        <hlm-error>
+          l'adresse email est requise.
+        </hlm-error>
+      } @else if (email.errors?.['email']) {
+        <hlm-error>
+          veuillez entrer une adresse email valide.
+        </hlm-error>
+      }
+    }
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+<div class="flex flex-col gap-2">
+  @if (label) {
+    <label hlmLabel>{{ label }}</label>
+  }
+
+  <hlm-form-field>
+    <input
+      (blur)="onBlur()"
+      (input)="onInput($event)"
+      [type]="type"
+      [value]="value"
+      hlmInput
+    />
+  </hlm-form-field>
+
+  @if (showError) {
+    <hlm-error>
+      {{ errorMessage }}
+    </hlm-error>
+  }
+</div>
+

@@ -1,0 +1,24 @@
+<div
+  class="relative w-full h-full overflow-hidden flex items-center justify-center bg-zinc-50 z-51 animate-slide-to-top">
+  @if (isLoading()) {
+    <app-loading-state message="envoie de la commande en cuisine"/>
+  } @else {
+    <div class="flex flex-col w-3xl m-16 gap-6">
+      <div class="flex flex-col gap-2 items-center">
+        <img alt="logo" class="h-10 w-fit" src="{{restaurantConfigStore.config()!.restaurant.logo}}"/>
+
+        <div class="flex flex-col gap-2 text-center">
+          <h1 class="text-3xl font-bold text-zinc-900">c'est
+            enregistré, {{ terminalOrderStore.customer()?.name || 'cher client' }} !</h1>
+          <p
+            class="text-lg text-zinc-600 font-normal">votre commande n°{{ terminalOrderStore.orderNumber() }} est en
+            préparation. Installez-vous, on s'occupe de tout.</p>
+        </div>
+      </div>
+      <button (click)="stepService.next()" animation="pushShine" hlmBtn
+              size="xxl" variant="terminalPrimary">
+        retour à l'accueil
+      </button>
+    </div>
+  }
+</div>

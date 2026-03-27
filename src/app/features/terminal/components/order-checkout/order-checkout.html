@@ -1,0 +1,57 @@
+@if (showEaselSelection()) {
+  <div class="absolute w-full h-full overflow-hidden">
+    <app-order-easel/>
+  </div>
+}
+
+<div class="flex flex-col gap-4 p-8 h-full overflow-hidden bg-white">
+  <div class="h-12 flex items-center justify-between gap-4">
+    <h1 class="text-2xl font-bold text-zinc-900">
+      mon panier ({{ terminalOrderStore.totalItems() }} article{{ terminalOrderStore.totalItems() > 1 ? 's' : '' }})
+    </h1>
+    <img alt="logo" class="h-full" src="{{restaurantConfigStore.config()!.restaurant.logo}}"/>
+  </div>
+  <div class="flex-1 flex flex-col gap-4 overflow-x-scroll scrollbar-hide">
+
+    @for (line of terminalOrderStore.basket(); track line.product.uuid) {
+      <div class="flex justify-between px-6 py-4 rounded bg-zinc-100 shadow-xs animate-slide-in-top">
+        <div class="flex gap-4">
+          <img [src]="line.product.imageUrl" class="size-24 object-cover rounded-xl"/>
+          <div class="flex flex-col">
+            <h3 class="text-zinc-900 text-2xl font-bold">{{ line.product.name }}</h3>
+            <p class="text-base text-zinc-500">{{ line.product.description }}</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-1 items-end">
+          <div class="scale-75 origin-right">
+            <app-quantity-selector
+              (valueChanged)="onQuantityChange($event, line)"
+              [initialValue]="line.amount"
+              [min]="0"/>
+          </div>
+          <p class="text-lg font-bold text-zinc-900 text-right">
+            {{ (line.product.price * line.amount) | currency:'EUR' }}</p>
+        </div>
+      </div>
+    } @empty {
+      <div
+        class="text-center flex items-center justify-center h-full py-12 border-2 border-dashed rounded text-zinc-400 text-xl font-normal">
+        le panier est vide.
+      </div>
+    }
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <button
+      (click)="handleValidateOrder()"
+      [disabled]="terminalOrderStore.totalPrice() === 0"
+      hlmBtn
+      size="xxl"
+      variant="terminalPrimary"
+    >
+      payer (total de {{ terminalOrderStore.totalPrice() | currency:'EUR' }})
+    </button>
+    <button (click)="stepService.back()" hlmBtn size="xxl" variant="terminalTertiary">retour au menu</button>
+  </div>
+</div>

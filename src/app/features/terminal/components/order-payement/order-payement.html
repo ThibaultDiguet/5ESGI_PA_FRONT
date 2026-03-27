@@ -1,0 +1,31 @@
+@if (isPayementSuccessful()) {
+  <div class="absolute w-full h-full overflow-hidden">
+    <app-order-confirmation/>
+  </div>
+}
+
+<div class="w-full h-full overflow-hidden flex items-center justify-center bg-zinc-50">
+  <div class="flex flex-col w-3xl m-16 gap-6">
+    <div class="flex flex-col gap-2">
+      <div class="flex justify-center">
+        <img alt="logo" class="h-10 w-fit" src="{{restaurantConfigStore.config()!.restaurant.logo}}"/>
+      </div>
+      <div class="flex flex-col gap-2 text-center">
+        <h1 class="text-3xl font-bold text-zinc-900">finaliser votre commande</h1>
+        <p class="text-lg text-zinc-600 font-normal">présentez votre carte bancaire sur le terminal ci-dessous pour
+          valider votre commande</p>
+      </div>
+    </div>
+
+    <div class="mx-auto w-full h-96">
+      <app-pay-lottie/>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <button (click)="stepService.back()" animation="pushShine" hlmBtn size="xxl"
+              variant="terminalTertiary">
+        retourner au panier
+      </button>
+    </div>
+  </div>
+</div>
