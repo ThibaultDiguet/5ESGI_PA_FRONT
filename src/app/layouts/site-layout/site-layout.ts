@@ -1,23 +1,19 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {Navbar} from "../../shared/components/site/navbar/navbar";
-import {ActivatedRoute, Router, RouterOutlet} from "@angular/router";
-import {RestaurantService} from '../../core/services/restaurant';
-import {RestaurantConfig} from '../../core/types/restaurant';
-import {RestaurantConfigContext} from '../../features/site/services/restaurant-config-context';
-import {LoadingConfig} from '../../features/site/components/loading-config/loading-config';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { RestaurantService } from '../../core/services/restaurant';
+import { RestaurantConfig } from '../../core/types/restaurant';
+import { RestaurantConfigStore } from '../../core/stores/restaurantConfigStore';
+import { LoadingState } from '../../shared/components/primitives/loading-state/loading-state';
+import { Navbar } from '../../shared/components/site/navbar/navbar';
 
 @Component({
   selector: 'app-site-layout',
-  imports: [
-    Navbar,
-    RouterOutlet,
-    LoadingConfig
-  ],
-  providers: [RestaurantConfigContext],
-  templateUrl: './site-layout.html'
+  imports: [LoadingState, Navbar, RouterOutlet],
+  providers: [RestaurantConfigStore],
+  templateUrl: './site-layout.html',
 })
 export class SiteLayout implements OnInit {
-  restaurantConfig: RestaurantConfigContext;
+  restaurantConfig: RestaurantConfigStore;
   restaurant_uri!: string;
   route: ActivatedRoute;
   restaurantService: RestaurantService;
@@ -26,7 +22,7 @@ export class SiteLayout implements OnInit {
 
   constructor() {
     this.router = inject(Router);
-    this.restaurantConfig = inject(RestaurantConfigContext);
+    this.restaurantConfig = inject(RestaurantConfigStore);
     this.route = inject(ActivatedRoute);
     this.restaurantService = inject(RestaurantService);
     this.isFetchingConfig = true;
@@ -44,7 +40,7 @@ export class SiteLayout implements OnInit {
           if (error.status === 404) {
             this.router.navigate(['/not-found']);
           }
-        }
+        },
       });
     }
   }

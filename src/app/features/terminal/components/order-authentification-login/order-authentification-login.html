@@ -1,0 +1,33 @@
+<div class="relative w-full h-full flex flex-col gap-4 justify-center bg-zinc-50 z-51 animate-slide-to-top">
+  @if (isLoading()) {
+    <app-loading-state message="récupération du compte en cours"/>
+  } @else {
+    <div class="animate-slide-in-top p-6 text-center flex flex-items flex-col gap-6 items-center">
+      <img alt="restaurant logo" class="h-10 w-fit" src="{{restaurantConfigStore.config()!.restaurant.logo}}">
+
+      @if (terminalOrderStore.customer()) {
+        <h2 class="text-2xl font-bold text-zinc-900">ravi de vous revoir, {{ terminalOrderStore.customer()?.name }}
+          !</h2>
+
+        <div class="flex flex-row gap-6 justify-center">
+          <button (click)="stepService.back()" animation="pushShine" class="w-fit" hlmBtn size="xxl"
+                  variant="terminalTertiary">retour à la connexion
+          </button>
+          <button (click)="validateAuthentification()" animation="pushShine" class="w-fit" hlmBtn size="xxl"
+                  variant="terminalPrimary">c'est bien moi, je commande
+          </button>
+        </div>
+
+      } @else {
+        <div class="flex flex-col items-center justify-center gap-2">
+          <h2 class="text-2xl font-bold text-zinc-900">compte introuvable</h2>
+          <p class="text-base text-zinc-600 font-normal">nous n'avons malheureusement pas trouvé de compte lié à ce code
+            de
+            fidélité.</p>
+        </div>
+        <button (click)="stepService.back()" class="w-fit" hlmBtn size="xxl" variant="tertiary">retour à la connexion
+        </button>
+      }
+    </div>
+  }
+</div>

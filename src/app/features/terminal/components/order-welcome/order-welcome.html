@@ -1,0 +1,17 @@
+<button (click)="stepService.next()"
+        class="relative flex flex-col h-full overflow-hidden bg-zinc-50 w-full">
+  <img alt="bg" class="h-full w-full object-cover object-right"
+       src="{{restaurantConfig.config()!.restaurant.welcome_image}}"/>
+  <img alt="logo" class="absolute w-sm inset-x-0 top-0 left-0 m-15"
+       src="{{restaurantConfig.config()!.restaurant.logo}}"/>
+  <div
+    class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-zinc-800 via-zinc-800/60 to-transparent flex flex-col justify-end p-8 pb-15">
+    <div class="flex flex-row gap-4 justify-center items-end ">
+      <h1 class="text-4xl font-normal text-zinc-50 text-center">
+        touchez l’écran pour commencer à
+        <span class="text-primary font-bold">commander</span>
+      </h1>
+      <app-icon-hand class="text-white w-12 h-12 animate-bounce rotate-320" size="96px"></app-icon-hand>
+    </div>
+  </div>
+</button>

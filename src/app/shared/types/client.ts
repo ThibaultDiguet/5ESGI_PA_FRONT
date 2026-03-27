@@ -1,8 +1,7 @@
-export interface Client {
+export interface Customer {
   uuid: string;
   loyaltyCode: string;
+  loyaltyPoints: number;
   name: string;
   mail: string;
-  otp_hash: number;
-  otp_hash_expiration: Date
 }

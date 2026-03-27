@@ -2,18 +2,17 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LocalStorageService {
   private subjects = new Map<string, BehaviorSubject<unknown>>();
 
   constructor() {
     window.addEventListener('storage', (event) => {
-      console.log(event)
       if (event.key) {
         this.emitChange(event.key, event.newValue);
       } else {
-        this.subjects.forEach(subject => subject.next(null));
+        this.subjects.forEach((subject) => subject.next(null));
       }
     });
   }
@@ -53,7 +52,7 @@ export class LocalStorageService {
   clear(): void {
     try {
       localStorage.clear();
-      this.subjects.forEach(subject => subject.next(null));
+      this.subjects.forEach((subject) => subject.next(null));
     } catch (err) {
       console.warn('LocalStorageService.clear() failed:', err);
     }

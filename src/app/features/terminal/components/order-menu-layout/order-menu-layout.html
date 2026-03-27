@@ -1,0 +1,11 @@
+@if (isLoading()) {
+  <div class="w-full h-full flex items-center justify-center">
+    <app-loading-state/>
+  </div>
+} @else {
+  <div class="flex flex-col h-screen overflow-hidden bg-zinc-50">
+    <app-order-header class="flex-none"/>
+    <app-order-body class="flex-1 min-h-0"/>
+    <app-order-navbar class="flex-none"/>
+  </div>
+}
